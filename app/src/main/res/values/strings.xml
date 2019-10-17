@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AmoPizza</string>
+    <string name="_25">25 см</string>
+    <string name="Pizza">Пицца</string>
+    <string name="margarita">margarita</string>
+    <string name="_30">30 см</string>
+    <string name="_35">35 см</string>
+    <string name="_40">40 см</string>
+    <string name="newyork">newyork</string>
+
+</resources>
