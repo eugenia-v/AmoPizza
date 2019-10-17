@@ -38,7 +38,7 @@
                 android:layout_height="270dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/margarita"
-                app:srcCompat="@mipmap/imageMargarita" />
+                app:srcCompat="@drawable/margarita" />
 
 
             <LinearLayout
