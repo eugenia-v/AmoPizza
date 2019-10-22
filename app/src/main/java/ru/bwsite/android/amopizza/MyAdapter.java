@@ -18,9 +18,11 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<Pizza> pizzaList;
+    private MainActivity context;
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Pizza> pizza) {
+    public MyAdapter(List<Pizza> pizza, MainActivity context) {
         this.pizzaList = pizza;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -39,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(pizzaList.get(position).title);
-        Glide.with(holder.imageView)
+        Glide.with(context)
                 .load(holder.imageView)
                 .into(holder.imageView);
     }

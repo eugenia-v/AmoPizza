@@ -1,12 +1,11 @@
 package ru.bwsite.android.amopizza;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerView(){
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter = new MyAdapter(pizzaList);
+        myAdapter = new MyAdapter(pizzaList, this);
         recyclerView.setAdapter(myAdapter);
     }
 }
