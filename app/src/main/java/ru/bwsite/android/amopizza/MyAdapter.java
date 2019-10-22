@@ -15,17 +15,6 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<Pizza> pizzaList;
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imageView;
-        private View view;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-
-            view = itemView.findViewById(R.id.imageView2);
-        }
-    }
-
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(List<Pizza> pizza) {
         this.pizzaList = pizza;
@@ -46,12 +35,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Pizza pizza = pizzaList.get(position);
+        holder.textView.setText(pizzaList.get(position).title);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return pizzaList.size();
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView textView;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            textView = itemView.findViewById(R.id.title);
+        }
     }
 }
