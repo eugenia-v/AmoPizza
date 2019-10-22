@@ -9,42 +9,36 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List pizzA;
-
-
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+    private List<Pizza> pizzaList;
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+        private ImageView imageView;
+        private View view;
 
-        public ImageView pizzaPhoto;
-        //public LinearLayout linearLayout;
         public MyViewHolder(View itemView) {
             super(itemView);
-            pizzaPhoto = (ImageView) itemView.findViewById(R.id.imageView2);
-            //linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
+
+            view = itemView.findViewById(R.id.imageView2);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(List<Pizza> pizza) {
-        this.pizzA = pizza;
+        this.pizzaList = pizza;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
+    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        TextView v = (TextView) LayoutInflater.from(parent.getContext())
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.activity_main, parent, false);
 
-        MyViewHolder vh = new MyViewHolder(v);
-        return vh;
+        return new MyViewHolder(view);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -52,13 +46,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        //holder.textView.setText(mDataset[position]);
-
+        Pizza pizza = pizzaList.get(position);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return pizzA.size();
+        return pizzaList.size();
     }
 }
