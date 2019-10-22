@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Pizza {
     String title;
+    String images;
     //String link;
     //String description;
-    //String images;
     //String price;
     //String guid;
 
-    public Pizza(String title /*, String link, String description, String images*/){
+    public Pizza(String title, String images /*, String link, String description*/) {
         this.title = title;
+        this.images = images;
         //this.link = link;
         //this.description = description;
-        //this.images = images;
     }
 }

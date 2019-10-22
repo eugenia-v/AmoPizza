@@ -21,15 +21,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);//установка ресурса разметки дизайна
-        //pizzaTitle = findViewById(R.id.title);
+
         initRecyclerView();
-       // pizzaTitle.setText();
 
 /*----------------------------------*/
 
-        pizzaList.add(new Pizza("Маргарита"/*,"kategorii/piczcza/margarita", "Томаты, сыр моцарелла, пицца-соус.","/assets/images/products/79/13-pizza.jpg"*/));
-        pizzaList.add(new Pizza("Нью-Йорк"/*,"kategorii/piczcza/nyu-jork", "Ветчина, грибы, пицца-соус, сыр моцарелла", "/assets/images/products/80/7-pizza.jpg"*/));
-        // specify an adapter (see also next example)
+        pizzaList.add(new Pizza("Маргарита", "R.drawable.margarita"/*,"kategorii/piczcza/margarita", "Томаты, сыр моцарелла, пицца-соус."*/));
+        pizzaList.add(new Pizza("Нью-Йорк", "R.drawable.newjork"/*,"kategorii/piczcza/nyu-jork", "Ветчина, грибы, пицца-соус, сыр моцарелла"*/));
+
     }
     private void initRecyclerView(){
         recyclerView = findViewById(R.id.my_recycler_view);

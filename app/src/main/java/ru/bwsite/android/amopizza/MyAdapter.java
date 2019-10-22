@@ -1,5 +1,6 @@
 package ru.bwsite.android.amopizza;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,6 +39,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(pizzaList.get(position).title);
+        Glide.with(holder.imageView)
+                .load(holder.imageView)
+                .into(holder.imageView);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -45,10 +51,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imageView;
         private TextView textView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.image);
             textView = itemView.findViewById(R.id.title);
         }
     }
