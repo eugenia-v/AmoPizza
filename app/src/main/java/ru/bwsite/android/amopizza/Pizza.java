@@ -5,16 +5,22 @@ import java.util.List;
 
 public class Pizza {
     String title;
-    String images;
-    //String link;
-    //String description;
-    //String price;
-    //String guid;
+    int imageResourceID;
+    String description;
+    String[] price_size = new String[4];
+    String price;
+    //String gr_name;
 
-    public Pizza(String title, String images /*, String link, String description*/) {
+    /*public Pizza(String title, int imageResourceID, String description, String[] price_size) {
         this.title = title;
-        this.images = images;
-        //this.link = link;
-        //this.description = description;
+        this.imageResourceID = imageResourceID;
+        this.description = description;
+        this.price_size = price_size;
+    }*/
+    public Pizza(String title, int imageResourceID, String description, String price) {
+        this.title = title;
+        this.imageResourceID = imageResourceID;
+        this.description = description;
+        this.price = price;
     }
 }

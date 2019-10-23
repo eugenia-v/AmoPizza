@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,13 +38,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(pizzaList.get(position).title);
         Glide.with(context)
-                .load(holder.imageView)
+                .load(pizzaList.get(position).imageResourceID)
                 .into(holder.imageView);
+        holder.textViewDescription.setText(pizzaList.get(position).description);
+        holder.mButton1 = (Button)holder.linearLayout.getChildAt(0);
+        holder.mButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.price.setText(pizzaList.get(position).price);
+            }
+        });
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -55,11 +65,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
         private TextView textView;
+        private TextView textViewDescription;
+        private LinearLayout linearLayout;
+        private TextView price;
+        private Button mButton1;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.image);
             textView = itemView.findViewById(R.id.title);
+            textViewDescription = itemView.findViewById(R.id.description);
+            linearLayout = itemView.findViewById(R.id.buttons);
+            price = itemView.findViewById(R.id.price);
         }
     }
 }
