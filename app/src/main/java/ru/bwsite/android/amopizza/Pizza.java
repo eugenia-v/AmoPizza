@@ -8,7 +8,6 @@ public class Pizza {
     int imageResourceID;
     String description;
     String[] price_size = new String[4];
-    String price;
     //String gr_name;
 
     /*public Pizza(String title, int imageResourceID, String description, String[] price_size) {
@@ -17,10 +16,10 @@ public class Pizza {
         this.description = description;
         this.price_size = price_size;
     }*/
-    public Pizza(String title, int imageResourceID, String description, String price) {
+    public Pizza(String title, int imageResourceID, String description, String[] price_size) {
         this.title = title;
         this.imageResourceID = imageResourceID;
         this.description = description;
-        this.price = price;
+        this.price_size = price_size;
     }
 }

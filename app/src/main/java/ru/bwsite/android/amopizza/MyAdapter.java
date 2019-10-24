@@ -20,6 +20,7 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<Pizza> pizzaList;
     private MainActivity context;
+
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(List<Pizza> pizza, MainActivity context) {
         this.pizzaList = pizza;
@@ -42,15 +43,56 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(pizzaList.get(position).title);
+
         Glide.with(context)
                 .load(pizzaList.get(position).imageResourceID)
                 .into(holder.imageView);
         holder.textViewDescription.setText(pizzaList.get(position).description);
-        holder.mButton1 = (Button)holder.linearLayout.getChildAt(0);
+
+        final String[] priceArr = pizzaList.get(position).price_size;
+        holder.priceText.setText(priceArr[0]);
+        holder.mButton1 = (Button) holder.linearLayout.getChildAt(0);
         holder.mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.price.setText(pizzaList.get(position).price);
+                holder.priceText.setText(priceArr[0]);
+                holder.mButton1.setBackgroundResource(R.drawable.bgalt);
+                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
+            }
+        });
+        holder.mButton2 = (Button) holder.linearLayout.getChildAt(1);
+        holder.mButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.priceText.setText(priceArr[1]);
+                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton2.setBackgroundResource(R.drawable.bgalt);
+                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
+            }
+        });
+        holder.mButton3 = (Button) holder.linearLayout.getChildAt(2);
+        holder.mButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.priceText.setText(priceArr[2]);
+                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton3.setBackgroundResource(R.drawable.bgalt);
+                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
+            }
+        });
+        holder.mButton4 = (Button) holder.linearLayout.getChildAt(3);
+        holder.mButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.priceText.setText(priceArr[3]);
+                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
+                holder.mButton4.setBackgroundResource(R.drawable.bgalt);
             }
         });
 
@@ -67,8 +109,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         private TextView textView;
         private TextView textViewDescription;
         private LinearLayout linearLayout;
-        private TextView price;
+        private TextView priceText;
         private Button mButton1;
+        private Button mButton2;
+        private Button mButton3;
+        private Button mButton4;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -76,7 +121,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             textView = itemView.findViewById(R.id.title);
             textViewDescription = itemView.findViewById(R.id.description);
             linearLayout = itemView.findViewById(R.id.buttons);
-            price = itemView.findViewById(R.id.price);
+            priceText = itemView.findViewById(R.id.price);
         }
     }
 }
