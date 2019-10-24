@@ -8,5 +8,7 @@
     <string name="_40">40 см</string>
     <string name="newyork">newyork</string>
     <string name="pizza_image">pizza image</string>
+    <string name="menu">Меню</string>
+    <string name="pizzaButton">Пицца</string>
 
 </resources>

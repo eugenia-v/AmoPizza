@@ -1,6 +1,8 @@
 package ru.bwsite.android.amopizza;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private Button mPizzaButton;
     private RecyclerView recyclerView;
     private MyAdapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -24,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);//установка ресурса разметки дизайна
+        mPizzaButton = findViewById(R.id.pizzaButton);
+        mPizzaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.pizza);
+            }
+        });
 
         initRecyclerView();
 
@@ -31,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         pizzaList.add(new Pizza("Маргарита", R.drawable.margarita, "Томаты, сыр моцарелла, пицца-соус", priceArray1));
         pizzaList.add(new Pizza("Нью-Йорк", R.drawable.newjork, "Ветчина, грибы, пицца-соус, сыр моцарелла", priceArray2));
+        pizzaList.add(new Pizza("Пепперони", R.drawable.pepperoni, "Колбаски Пепперони, сыр моцарелла, пицца-соус", priceArray2));
+        pizzaList.add(new Pizza("Вегетарианская", R.drawable.vegetarianskaya, "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины", priceArray2));
 
     }
 
