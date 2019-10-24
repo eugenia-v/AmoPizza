@@ -5,25 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".PizzaActivity">
 
     <TextView
         android:id="@+id/pizza"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/menu"
+        android:text="@string/Pizza"
         android:textColor="#4E342E"
         android:textSize="30sp"
         android:textStyle="bold" />
-    <Button
-        android:id="@+id/pizzaButton"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:text="@string/pizzaButton"
-        android:textColor="#4E342E"
-        android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

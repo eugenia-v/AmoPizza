@@ -1,6 +1,5 @@
 package ru.bwsite.android.amopizza;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<Pizza> pizzaList;
-    private MainActivity context;
+    private List<Products> productsList;
+    private PizzaActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Pizza> pizza, MainActivity context) {
-        this.pizzaList = pizza;
+    public MyAdapter(List<Products> pizza, PizzaActivity context) {
+        this.productsList = pizza;
         this.context = context;
     }
 
@@ -42,14 +39,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(pizzaList.get(position).title);
+        holder.textView.setText(productsList.get(position).title);
 
         Glide.with(context)
-                .load(pizzaList.get(position).imageResourceID)
+                .load(productsList.get(position).imageResourceID)
                 .into(holder.imageView);
-        holder.textViewDescription.setText(pizzaList.get(position).description);
+        holder.textViewDescription.setText(productsList.get(position).description);
 
-        final String[] priceArr = pizzaList.get(position).price_size;
+        final String[] priceArr = productsList.get(position).price_size;
         holder.priceText.setText(priceArr[0]);
         holder.mButton1 = (Button) holder.linearLayout.getChildAt(0);
         holder.mButton1.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +98,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return pizzaList.size();
+        return productsList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
