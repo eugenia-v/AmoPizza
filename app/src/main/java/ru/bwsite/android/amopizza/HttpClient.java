@@ -8,6 +8,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpClient {
+    private static final String HEADER_AUTHORIZATION = "Authorization";
+    private static final String GET = "GET";
     private final JsonParser jsonParser;
 
     public HttpClient(){
