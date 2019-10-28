@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -46,13 +47,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 .into(holder.imageView);
         holder.textViewDescription.setText(productsList.get(position).description);
 
-        final String[] priceArr = productsList.get(position).price_size;
-        holder.priceText.setText(priceArr[0]);
+        final ArrayList<String> priceList = productsList.get(position).price;
+        final ArrayList<String> sizeList = productsList.get(position).size;
+        holder.priceText.setText(priceList.get(0));
         holder.mButton1 = (Button) holder.linearLayout.getChildAt(0);
+        holder.mButton1.setText(sizeList.get(0));
         holder.mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.priceText.setText(priceArr[0]);
+                holder.priceText.setText(priceList.get(0));
                 holder.mButton1.setBackgroundResource(R.drawable.bgalt);
                 holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
@@ -60,10 +63,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
         holder.mButton2 = (Button) holder.linearLayout.getChildAt(1);
+        holder.mButton2.setText(sizeList.get(1));
         holder.mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.priceText.setText(priceArr[1]);
+                holder.priceText.setText(priceList.get(1));
                 holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton2.setBackgroundResource(R.drawable.bgalt);
                 holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
@@ -71,10 +75,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
         holder.mButton3 = (Button) holder.linearLayout.getChildAt(2);
+        holder.mButton3.setText(sizeList.get(2));
         holder.mButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.priceText.setText(priceArr[2]);
+                holder.priceText.setText(priceList.get(2));
                 holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton3.setBackgroundResource(R.drawable.bgalt);
@@ -82,10 +87,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
         holder.mButton4 = (Button) holder.linearLayout.getChildAt(3);
+        holder.mButton4.setText(sizeList.get(3));
         holder.mButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.priceText.setText(priceArr[3]);
+                holder.priceText.setText(priceList.get(3));
                 holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
                 holder.mButton3.setBackgroundResource(R.drawable.bgnorm);

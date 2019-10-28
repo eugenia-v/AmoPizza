@@ -18,12 +18,9 @@ public class PizzaActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private TextView pizzaTitle;
     private List<Products> productsList = new ArrayList<>();
-    private String[] priceArray1 = new String[]{"290", "430", "590", "840"};
+    /*private String[] priceArray1 = new String[]{"290", "430", "590", "840"};
     private String[] priceArray2 = new String[]{"370", "495", "640", "890"};
-    private String[] priceArray3 = new String[]{"390", "530", "690", "990"};
-    /*private Map<String, String> price_size1 = new HashMap<>();
-    private Map<String, String> price_size2 = new HashMap<>();
-    private Map<String, String> price_size3 = new HashMap<>();*/
+    private String[] priceArray3 = new String[]{"390", "530", "690", "990"};*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +30,30 @@ public class PizzaActivity extends AppCompatActivity {
         initRecyclerView();
 
         /*----------------------------------*/
+        ArrayList<String> size1 = new ArrayList<>();
+        size1.add("20 см");
+        size1.add("25 см");
+        size1.add("30 см");
+        size1.add("35 см");
 
-        productsList.add(new Products("Пицца","Маргарита", R.drawable.margarita, "Томаты, сыр моцарелла, пицца-соус", priceArray1));
-        productsList.add(new Products("Пицца","Нью-Йорк", R.drawable.newjork, "Ветчина, грибы, пицца-соус, сыр моцарелла", priceArray2));
-        productsList.add(new Products("Пицца","Пепперони", R.drawable.pepperoni, "Колбаски Пепперони, сыр моцарелла, пицца-соус", priceArray2));
-        productsList.add(new Products("Пицца","Вегетарианская", R.drawable.vegetarianskaya, "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины", priceArray2));
-        productsList.add(new Products("Пицца","Морская", R.drawable.morskaya, "Пицца соус, креветки, сладкий перец, маслины, сыр моцарелла", priceArray3));
+        ArrayList<String> price1 = new ArrayList<>();
+        price1.add("290");
+        price1.add("430");
+        price1.add("590");
+        price1.add("840");
+
+        ArrayList<String> price2 = new ArrayList<>();
+        price1.add("370");
+        price1.add("495");
+        price1.add("640");
+        price1.add("890");
+
+
+        productsList.add(new Products("Пицца","Маргарита", R.drawable.margarita, "Томаты, сыр моцарелла, пицца-соус", price1, size1));
+        productsList.add(new Products("Пицца","Нью-Йорк", R.drawable.newjork, "Ветчина, грибы, пицца-соус, сыр моцарелла", price1, size1));
+        productsList.add(new Products("Пицца","Пепперони", R.drawable.pepperoni, "Колбаски Пепперони, сыр моцарелла, пицца-соус", price1, size1));
+        productsList.add(new Products("Пицца","Вегетарианская", R.drawable.vegetarianskaya, "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины", price1, size1));
+        productsList.add(new Products("Пицца","Морская", R.drawable.morskaya, "Пицца соус, креветки, сладкий перец, маслины, сыр моцарелла", price1, size1));
 
     }
 
