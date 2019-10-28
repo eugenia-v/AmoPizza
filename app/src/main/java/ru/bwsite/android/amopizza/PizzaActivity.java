@@ -8,16 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PizzaActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MyAdapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private TextView pizzaTitle;
-    private List<Products> productsList = new ArrayList<>();
+    private List<Product> productList = new ArrayList<>();
     /*private String[] priceArray1 = new String[]{"290", "430", "590", "840"};
     private String[] priceArray2 = new String[]{"370", "495", "640", "890"};
     private String[] priceArray3 = new String[]{"390", "530", "690", "990"};*/
@@ -49,18 +47,18 @@ public class PizzaActivity extends AppCompatActivity {
         price1.add("890");
 
 
-        productsList.add(new Products("Пицца","Маргарита", R.drawable.margarita, "Томаты, сыр моцарелла, пицца-соус", price1, size1));
-        productsList.add(new Products("Пицца","Нью-Йорк", R.drawable.newjork, "Ветчина, грибы, пицца-соус, сыр моцарелла", price1, size1));
-        productsList.add(new Products("Пицца","Пепперони", R.drawable.pepperoni, "Колбаски Пепперони, сыр моцарелла, пицца-соус", price1, size1));
-        productsList.add(new Products("Пицца","Вегетарианская", R.drawable.vegetarianskaya, "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины", price1, size1));
-        productsList.add(new Products("Пицца","Морская", R.drawable.morskaya, "Пицца соус, креветки, сладкий перец, маслины, сыр моцарелла", price1, size1));
+        productList.add(new Product("Пицца","Маргарита", R.drawable.margarita, "Томаты, сыр моцарелла, пицца-соус", price1, size1));
+        productList.add(new Product("Пицца","Нью-Йорк", R.drawable.newjork, "Ветчина, грибы, пицца-соус, сыр моцарелла", price1, size1));
+        productList.add(new Product("Пицца","Пепперони", R.drawable.pepperoni, "Колбаски Пепперони, сыр моцарелла, пицца-соус", price1, size1));
+        productList.add(new Product("Пицца","Вегетарианская", R.drawable.vegetarianskaya, "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины", price1, size1));
+        productList.add(new Product("Пицца","Морская", R.drawable.morskaya, "Пицца соус, креветки, сладкий перец, маслины, сыр моцарелла", price1, size1));
 
     }
 
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter = new MyAdapter(productsList, this);
+        myAdapter = new MyAdapter(productList, this);
         recyclerView.setAdapter(myAdapter);
     }
 }

@@ -1,12 +1,23 @@
 package ru.bwsite.android.amopizza;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JsonParser {
-    public Products getProducts(String response) throws JSONException {
-        JSONObject userJson = new JSONObject(response);
-        String title = userJson.getString("title");
-        return new Products(title);
+    public List<Product> getProducts(String response) throws JSONException {
+        JSONArray userJson = new JSONArray(response);
+        List<Product> res = new ArrayList<>();
+        for(int i = 0; i<userJson.length();i++){
+            JSONObject obj = (JSONObject)userJson.get(i);
+
+            String title = obj.getString("title");
+            Product p = new Product(title);
+            res.add(p);
+        }
+        return res;
     }
 }

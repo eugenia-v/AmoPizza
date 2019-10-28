@@ -1,0 +1,1332 @@
+[
+  {
+    "gr_name": "Пицца",
+    "products": [
+      {
+        "id": 106,
+        "name": "Пондза",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/106\/resized-pondza.jpeg",
+        "desc": "Свинина,ветчина,грибы,томаты,маслины,сыр,соус чесночный",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": "po25",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "po30",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "po35",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "po40",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "name": "Чесночный цыпленок",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/93\/12-pizza.jpg",
+        "desc": "Чесночный соус, цыпленок, шампиньоны, помидоры и сыр моцарелла. ",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "name": "Мясная",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/92\/2-pizza.jpg",
+        "desc": "Цыпленок, ветчина, пепперони, томаты, пицца-соус, сыр моцарелла.",
+        "label_text": "СЫТНО",
+        "label_color": "ffde00",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "390"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "530"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "690"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "990"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "name": "Амо Пицца",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/91\/3-pizza.jpg",
+        "desc": "Пицца соус, колбаски пепперони, ветчина, сладкий перец, шампиньоны, томаты, сыр моцарелла.",
+        "label_text": "СЫТНО",
+        "label_color": "ffde00",
+        "size_price": [
+          {
+            "article": "1",
+            "size": "25 см",
+            "price": "390"
+          },
+          {
+            "article": "2",
+            "size": "30 см",
+            "price": "530"
+          },
+          {
+            "article": "3",
+            "size": "35 см",
+            "price": "690"
+          },
+          {
+            "article": "4",
+            "size": "40 см",
+            "price": "990"
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "name": "АМО Ролл",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/104\/amo-roll-1.png",
+        "desc": "Фирменный ролл в пшеничной лепешке запеченный в печи с томатами, цыпленком\/пепперони, беконом и моцареллой.",
+        "label_text": "ХИТ",
+        "label_color": "e95e0d",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "name": "Пиканте",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/105\/resized-picante.jpeg",
+        "desc": "Ветчина,грибы,колбаски пеперони,перец болгарский,перчики халапеньо,орегано,сыр,соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "name": "Тропиканка",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/101\/resized-tropikanka.png",
+        "desc": "Курица, ананас,перчики халапеньо,сыр,сливки,орегано",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Туна",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/102\/tpizza5.jpg",
+        "desc": " Пицца соус, сыр моцарелла, тунец, помидоры, маслины. ",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "name": "Пицца \"Цезарь\"",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/103\/resized-cezar.jpeg",
+        "desc": "Курица, маслины,томаты,сыр,чесн. соус,лист салата",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "name": "Морская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/90\/15-pizza.jpg",
+        "desc": "Пицца соус, креветки, сладкий перец, маслины, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "390"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "530"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "690"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "990"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "name": "Итальянская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/89\/1-pizza.jpg",
+        "desc": "Пицца соус, колбаски пепперони, шампиньоны, маслины, орегано, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "name": "Четыре Сезона",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/86\/16-pizza.jpg",
+        "desc": "Цыпленок, пепперони, грибы,ветчина, пицца-соус, сыр моцарелла",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "name": "4 сыра",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/87\/8-pizza.jpg",
+        "desc": "Сыр моцарелла, Сыр Дорблю, Сыр Пармезан, Сыр Гауда, пицца-соус, сливки, грецкий орех.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "name": "Карбонара",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/85\/11-pizza.jpg",
+        "desc": "Бекон, Сыр моцарелла и Пармезан, сливки, пицца-соус",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "name": "Ассорти",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/94\/14-pizza.jpg",
+        "desc": "Чесночный соус, сыр моцарелла, курица, ветчина, грибы.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "name": "Барбекю",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/95\/9-pizza.jpg",
+        "desc": "Пицца соус, цыплёнок, бекон, репчатый лук, соус барбекю, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "name": "Крими Чикен",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/96\/crimchiken.png",
+        "desc": "Сливочный соус \"Жульен\", филе куриных грудок с грибами, сыр моцарелла, сыр пармезан",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "name": "Джульетта",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/97\/jlul.png",
+        "desc": " двойная порция шампиньонов, сливочный соус, сыр моцарелла, укроп.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "290"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "430"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "590"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "840"
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "name": "Улан-Удэнская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/98\/chilli-pizza.png",
+        "desc": "Фарш говяжий, перец болгар. лук, томаты, специи, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "495"
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "name": "Кальцоне",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/99\/calzone-1.png",
+        "desc": "Закрытый итальянский пицца-пирог, изготовленный в виде полумесяца, что позволяет сохранить все ароматы начинки внутри.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "Овощной ",
+            "price": "290"
+          },
+          {
+            "article": "",
+            "size": "Мясной ",
+            "price": "290"
+          },
+          {
+            "article": "",
+            "size": "Куриный ",
+            "price": "290"
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "name": "Самбреро",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/100\/sambrero.png",
+        "desc": "Микс из обжаренных овощей и цыпленка покрытые пшеничной лепешкой.",
+        "label_text": "ЭКСКЛЮЗИВ",
+        "label_color": "ee580d",
+        "size_price": [
+          {
+            "article": "",
+            "size": "Куриная ",
+            "price": "590"
+          },
+          {
+            "article": "",
+            "size": "Овощная ",
+            "price": "590"
+          },
+          {
+            "article": "",
+            "size": "Пепперони ",
+            "price": "590"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "name": "Мексиканская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/84\/6-pizza.jpg",
+        "desc": "Перчики халапеньо, цыплёнок, шампиньоны, сладкий перец, томаты, сыр моцарелла, пицца-соус, ",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "name": "Маргарита",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/79\/13-pizza.jpg",
+        "desc": "Томаты, сыр моцарелла, пицца-соус.",
+        "label_text": "Супер цена",
+        "label_color": "f61616",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "290"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "430"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "590"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "840"
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "name": "Нью-Йорк",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/80\/7-pizza.jpg",
+        "desc": "Ветчина, грибы, пицца-соус, сыр моцарелла",
+        "label_text": "Супер цена",
+        "label_color": "f61616",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "290"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "430"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "590"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "840"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "name": "Гавайская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/88\/10-pizza.jpg",
+        "desc": "Ананасы, ветчина, сливки, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "name": "Пепперони",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/81\/4-pizza.jpg",
+        "desc": "Колбаски Пепперони, сыр моцарелла, пицца-соус",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "name": "Вегетарианская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/82\/13-pizza.jpg",
+        "desc": "Томаты, грибы, перец болгарский, пицца-соус, сыр фета, сыр моцарелла, маслины",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "name": "Грибная",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/83\/7-pizza.jpg",
+        "desc": "Шампиньоны, ветчина, сыр моцарелла, соус ранч. ",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "370"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "640"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "890"
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "name": "Калабрийская",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/107\/resized-calabriskay.jpeg",
+        "desc": "Ветчина,грибы,томаты,лук, сыр,соус томатный",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "495"
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "name": "Шашлычная",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/108\/1-119-c7a0e8b4afd54218912f980e5c9d1dfe.jpg",
+        "desc": "Пицца соус, говядина, шампиньоны, томаты, сыр моцарелла.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "25 см",
+            "price": "390"
+          },
+          {
+            "article": "",
+            "size": "30 см",
+            "price": "530"
+          },
+          {
+            "article": "",
+            "size": "35 см",
+            "price": "690"
+          },
+          {
+            "article": "",
+            "size": "40 см",
+            "price": "990"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Комбо",
+    "products": [
+      {
+        "id": 76,
+        "name": "𡅡",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/76\/set1.png",
+        "desc": "Пицца 25см \" Нью-Йорк\" , Сок \"Добрый\" 1л, картофель фри 100 гр.",
+        "label_text": "ХИТ",
+        "label_color": "e95e0d",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 465
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "name": "N2",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/77\/set2.png",
+        "desc": "Пицца \"Чесночный цыпленок\", гамбургер 200гр, картофель \"Айдахо\" 100гр, кола 0,5л.",
+        "label_text": "ХИТ",
+        "label_color": "e95e0d",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 659
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "name": "N3",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/78\/set3.png",
+        "desc": " Пицц \" мексиканская\" 30см, чесночные гренки 150гр, 2 любых напитка на выбор.",
+        "label_text": "ХИТ",
+        "label_color": "e95e0d",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 749
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Паста",
+    "products": [
+      {
+        "id": 110,
+        "name": "Карбонара",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/110\/1.png",
+        "desc": "Бекон, спагетти, сливки, пармезан, лук.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "name": "Чикен Альфредо",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/111\/nj40hz-pju4-240x240-dd8.png",
+        "desc": "Спагетти с цыпленком в сливочном соусе и зеленью.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "name": "Болоньезе",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/112\/1404175308-boloneze.png",
+        "desc": "Cпагетти,сыр \"Пармезан\",соус Болоньезе, томатный соус.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Бургеры и роллы",
+    "products": [
+      {
+        "id": 114,
+        "name": "Биф бургер",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/114\/burger-240x240-dd8.png",
+        "desc": "Вкуснейший бургер с котлетой из говядины и овощами.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "name": "Чикен бургер",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/115\/chiken-burger-240x240-dd8.png",
+        "desc": "Вкуснейший бургер с котлетой из цыпленка и овощами.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 190
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "name": "Ролл Цезарь",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/116\/resized-cezar-roll.png",
+        "desc": "Тортилья, салатный лист,цыпленок, томат,сыр, соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 149
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "name": "Ролл Каприз",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/117\/resized-kapriz.png",
+        "desc": "Тортилья,огурец,ветчина,грибы,\r\nцыпленок,сыр,соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 149
+          }
+        ]
+      },
+      {
+        "id": 118,
+        "name": "Фреш ролл",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/118\/resized-fresh-roll.png",
+        "desc": "Тoртилья, лист салата,томат,огурец,соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 119
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "name": "Бифф ролл",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/119\/resized-bif-roll.png",
+        "desc": "Тортилья, лист салата, говядина,томат,огурец,соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 159
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "name": "Чикен ролл",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/120\/resized-bif-roll.png",
+        "desc": "Тортилья, лист салата,цыпленок,томат,огурец,соус",
+        "label_text": "Новинка",
+        "label_color": "db1f1f",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 149
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Закуски",
+    "products": [
+      {
+        "id": 122,
+        "name": "Цезарь",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/122\/y6daaz8bg6s-300x240-f3c.png",
+        "desc": "Состав: листья салата, томаты, сухарики, цыпленок, соус цезарь.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "name": "Греческий",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/123\/pdcl86d8adg-240x240-dd8.png",
+        "desc": "Состав: сыр фета, маслины, листья салата, томаты, огурцы, соус.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 220
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "name": "Картофель фри",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/124\/fry.png",
+        "desc": "Состав: сыр фета, маслины, листья салата, томаты, огурцы, соус.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "100 гр",
+            "price": "55"
+          },
+          {
+            "article": "",
+            "size": "200 гр",
+            "price": "100"
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "name": "Гренки Сырные",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/125\/grenki.png",
+        "desc": "Фокачча, чеснок, масло раст, соль.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "150 гр",
+            "price": "100"
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "name": "Гренки Чесночные",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/126\/chesgrenki.png",
+        "desc": "хлебные сухари, обжаренные во фритюре с чесноком.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "150 гр",
+            "price": "100"
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "name": "Каприз",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/127\/kaprise.png",
+        "desc": "Куриная грудка, ветчина, грибы, корнишоны, сыр моцарелла, соус.",
+        "label_text": "НОВИНКА",
+        "label_color": "00FF66",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 128,
+        "name": "Картофель Айдахо",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/128\/aidaho.png",
+        "desc": "",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "100 гр",
+            "price": "55"
+          },
+          {
+            "article": "",
+            "size": "200 гр",
+            "price": "100"
+          }
+        ]
+      },
+      {
+        "id": 129,
+        "name": "Курочка в темпуре",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/129\/hotchik.png",
+        "desc": "",
+        "label_text": "НОВИНКА",
+        "label_color": "33FF66",
+        "size_price": [
+          {
+            "article": "",
+            "size": "200 гр",
+            "price": "200"
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "name": "Наггетсы",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/130\/1418206714-1.jpg",
+        "desc": "Вкусные домашние хрустящие куриные наггетсы из куриной грудки в панировке.",
+        "label_text": "НОВИНКА",
+        "label_color": "33FF66",
+        "size_price": [
+          {
+            "article": "",
+            "size": "6 шт",
+            "price": "140"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Десерты",
+    "products": [
+      {
+        "id": 132,
+        "name": "Макарун",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/132\/makarun.png",
+        "desc": "Миндальное печенье со сладкой прослойкой.",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 60
+          }
+        ]
+      },
+      {
+        "id": 133,
+        "name": "Энчиладос",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/133\/e913e3d6dc70.jpg",
+        "desc": "Необычный десерт из яблочного варенья с цитрусом, обжаренный во фритюре. ",
+        "label_text": "НОВИНКА",
+        "label_color": "07FC34",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "gr_name": "Напитки",
+    "products": [
+      {
+        "id": 135,
+        "name": "Чай Nestea",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/135\/nestea.png",
+        "desc": "",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 80
+          }
+        ]
+      },
+      {
+        "id": 136,
+        "name": "Coca-Cola",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/136\/coca-0.5-240x240-dd8.png",
+        "desc": "",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": "",
+            "size": "0.5 л",
+            "price": "75"
+          },
+          {
+            "article": "",
+            "size": "1 л",
+            "price": "95"
+          }
+        ]
+      },
+      {
+        "id": 140,
+        "name": "Burn",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/140\/burn-product-image.png",
+        "desc": "0.33",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 100
+          }
+        ]
+      },
+      {
+        "id": 138,
+        "name": "Сок Добрый",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/138\/dobriy-240x240-dd8.png",
+        "desc": "",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 120
+          }
+        ]
+      },
+      {
+        "id": 139,
+        "name": "Аква минерале 0,6 л.",
+        "img_url": "http:\/\/amopizza.ru\/assets\/images\/products\/139\/aqua-minerale-240x240-dd8.png",
+        "desc": "Вода негазированная",
+        "label_text": "",
+        "label_color": "",
+        "size_price": [
+          {
+            "article": null,
+            "size": null,
+            "price": 60
+          }
+        ]
+      }
+    ]
+  }
+]

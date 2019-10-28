@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<Products> productsList;
+    private List<Product> productList;
     private PizzaActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Products> pizza, PizzaActivity context) {
-        this.productsList = pizza;
+    public MyAdapter(List<Product> pizza, PizzaActivity context) {
+        this.productList = pizza;
         this.context = context;
     }
 
@@ -40,15 +40,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(productsList.get(position).title);
+        holder.textView.setText(productList.get(position).title);
 
         Glide.with(context)
-                .load(productsList.get(position).imageResourceID)
+                .load(productList.get(position).imageResourceID)
                 .into(holder.imageView);
-        holder.textViewDescription.setText(productsList.get(position).description);
+        holder.textViewDescription.setText(productList.get(position).description);
 
-        final ArrayList<String> priceList = productsList.get(position).price;
-        final ArrayList<String> sizeList = productsList.get(position).size;
+        final ArrayList<String> priceList = productList.get(position).price;
+        final ArrayList<String> sizeList = productList.get(position).size;
         holder.priceText.setText(priceList.get(0));
         holder.mButton1 = (Button) holder.linearLayout.getChildAt(0);
         holder.mButton1.setText(sizeList.get(0));
@@ -104,7 +104,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return productsList.size();
+        return productList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

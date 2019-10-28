@@ -2,28 +2,25 @@ package ru.bwsite.android.amopizza;
 
 import org.json.JSONException;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 public class HttpClient {
-    private static final String HEADER_AUTHORIZATION = "Authorization";
-    private static final String GET = "GET";
     private final JsonParser jsonParser;
 
     public HttpClient(){
         jsonParser = new JsonParser();
     }
 
-    public Products readProductsInfo(String productsTitle) throws IOException, JSONException {
+    public List<Product> readProductsInfo(String productsTitle) throws IOException, JSONException {
         String requestURL = "http://amop.bwsite.ru/goods.json" + productsTitle;
         URL url = new URL(requestURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        // add auth header to request
-        String authHeader = getAuthHeader(requestURL);
-        connection.setRequestProperty(HEADER_AUTHORIZATION, authHeader);
 
         connection.connect();
 
@@ -36,8 +33,24 @@ public class HttpClient {
         }
 
         String response = convertStreamToString(in);
-        Products products = jsonParser.getProducts(response);
+        //вывести строку, посмотреть че в ней log
+        List<Product> product = jsonParser.getProducts(response);
 
-        return products;
+        return product;
     }
+
+    private String convertStreamToString(InputStream stream) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        StringBuilder sb = new StringBuilder();
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line).append("\n");
+        }
+        stream.close();
+
+        return sb.toString();
+    }
+
 }
