@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.List;
 
 public class HttpClient {
+    private static final String TAG = "HttpClient";
     private final JsonParser jsonParser;
 
     public HttpClient(){

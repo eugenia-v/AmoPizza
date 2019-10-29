@@ -26,7 +26,7 @@ public class PizzaActivity extends AppCompatActivity {
         /*----------------------------------*/
 
     HttpClient httpClient = new HttpClient();
-        productList.add(new Product(httpClient.readProductInfo("gr_name")));
+        //productList.add(new Product(httpClient.readProductInfo("gr_name")));
 
     }
 
