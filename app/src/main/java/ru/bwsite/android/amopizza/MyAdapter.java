@@ -40,64 +40,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(productList.get(position).title);
+        holder.textView.setText(productList.get(position).gr_name);
 
-        Glide.with(context)
+/*        Glide.with(context)
                 .load(productList.get(position).imageResourceID)
                 .into(holder.imageView);
-        holder.textViewDescription.setText(productList.get(position).description);
-
-        final ArrayList<String> priceList = productList.get(position).price;
-        final ArrayList<String> sizeList = productList.get(position).size;
-        holder.priceText.setText(priceList.get(0));
-        holder.mButton1 = (Button) holder.linearLayout.getChildAt(0);
-        holder.mButton1.setText(sizeList.get(0));
-        holder.mButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.priceText.setText(priceList.get(0));
-                holder.mButton1.setBackgroundResource(R.drawable.bgalt);
-                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
-            }
-        });
-        holder.mButton2 = (Button) holder.linearLayout.getChildAt(1);
-        holder.mButton2.setText(sizeList.get(1));
-        holder.mButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.priceText.setText(priceList.get(1));
-                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton2.setBackgroundResource(R.drawable.bgalt);
-                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
-            }
-        });
-        holder.mButton3 = (Button) holder.linearLayout.getChildAt(2);
-        holder.mButton3.setText(sizeList.get(2));
-        holder.mButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.priceText.setText(priceList.get(2));
-                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton3.setBackgroundResource(R.drawable.bgalt);
-                holder.mButton4.setBackgroundResource(R.drawable.bgnorm);
-            }
-        });
-        holder.mButton4 = (Button) holder.linearLayout.getChildAt(3);
-        holder.mButton4.setText(sizeList.get(3));
-        holder.mButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.priceText.setText(priceList.get(3));
-                holder.mButton1.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton2.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton3.setBackgroundResource(R.drawable.bgnorm);
-                holder.mButton4.setBackgroundResource(R.drawable.bgalt);
-            }
-        });
+        holder.textViewDescription.setText(productList.get(position).description);*/
 
     }
 

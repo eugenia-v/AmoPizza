@@ -14,8 +14,8 @@ public class JsonParser {
         for(int i = 0; i<userJson.length();i++){
             JSONObject obj = (JSONObject)userJson.get(i);
 
-            String title = obj.getString("title");
-            Product p = new Product(title);
+            String gr_name = obj.getString("gr_name");
+            Product p = new Product(gr_name);
             res.add(p);
         }
         return res;

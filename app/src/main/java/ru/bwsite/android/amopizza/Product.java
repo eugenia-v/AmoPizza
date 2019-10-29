@@ -7,19 +7,9 @@ public class Product {
     String title;
     int imageResourceID;
     String description;
-    ArrayList<String> price;
-    ArrayList<String> size;
+    String[] size_price;
 
-    public Product(String title) {
-        this.title = title;
-    }
-
-    public Product(String gr_name, String title, int imageResourceID, String description, ArrayList<String> price, ArrayList<String> size) {
-        this.title = title;
-        this.imageResourceID = imageResourceID;
-        this.description = description;
-        this.price = price;
-        this.size = size;
+    public Product(String gr_name) {
         this.gr_name = gr_name;
     }
 

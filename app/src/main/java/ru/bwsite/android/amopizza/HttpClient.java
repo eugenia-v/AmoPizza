@@ -17,8 +17,8 @@ public class HttpClient {
         jsonParser = new JsonParser();
     }
 
-    public List<Product> readProductsInfo(String productsTitle) throws IOException, JSONException {
-        String requestURL = "http://amop.bwsite.ru/goods.json" + productsTitle;
+    public List<Product> readProductInfo(String productsTitle) throws IOException, JSONException {
+        String requestURL = "http://amop.bwsite.ru/goods2.json" + productsTitle;
         URL url = new URL(requestURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
