@@ -13,7 +13,6 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/Pizza"
         android:textColor="#4E342E"
         android:textSize="30sp"
         android:textStyle="bold" />

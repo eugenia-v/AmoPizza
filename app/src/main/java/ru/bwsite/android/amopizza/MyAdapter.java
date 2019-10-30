@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<Product> productList;
+    private List<Group> productList;
     private PizzaActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Product> pizza, PizzaActivity context) {
+    public MyAdapter(List<Group> pizza, PizzaActivity context) {
         this.productList = pizza;
         this.context = context;
     }
@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(productList.get(position).gr_name);
+        //holder.textView.setText(productList.get(position).gr_name);
 
 /*        Glide.with(context)
                 .load(productList.get(position).imageResourceID)

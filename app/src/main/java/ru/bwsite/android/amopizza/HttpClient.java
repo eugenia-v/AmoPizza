@@ -1,5 +1,7 @@
 package ru.bwsite.android.amopizza;
 
+import android.util.Log;
+
 import org.json.JSONException;
 
 import java.io.BufferedReader;
@@ -18,8 +20,8 @@ public class HttpClient {
         jsonParser = new JsonParser();
     }
 
-    public List<Product> readProductInfo(String productsTitle) throws IOException, JSONException {
-        String requestURL = "http://amop.bwsite.ru/goods2.json" + productsTitle;
+    public List<Group> readGroupInfo() throws IOException, JSONException {
+        String requestURL = "http://amop.bwsite.ru/goods2.json";
         URL url = new URL(requestURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -35,9 +37,11 @@ public class HttpClient {
 
         String response = convertStreamToString(in);
         //вывести строку, посмотреть че в ней log
-        List<Product> product = jsonParser.getProducts(response);
+        //Log.d("response", response);
 
-        return product;
+        List<Group> groups = jsonParser.getGroup(response);
+
+        return groups;
     }
 
     private String convertStreamToString(InputStream stream) throws IOException {

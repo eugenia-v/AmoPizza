@@ -1,5 +1,10 @@
 package ru.bwsite.android.amopizza;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,15 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonParser {
-    public List<Product> getProducts(String response) throws JSONException {
-        JSONArray userJson = new JSONArray(response);
-        List<Product> res = new ArrayList<>();
-        for(int i = 0; i<userJson.length();i++){
-            JSONObject obj = (JSONObject)userJson.get(i);
-
-            String gr_name = obj.getString("gr_name");
-            Product p = new Product(gr_name);
-            res.add(p);
+    public List<Group> getGroup(String response) throws JSONException {
+        List<Group> res = new ArrayList<>();
+        JSONArray jsonArr = new JSONArray(response);
+        Gson gson = new GsonBuilder().create();
+        for(int i = 0; i < jsonArr.length(); i++) {
+            res.add(gson.fromJson(jsonArr.get(i).toString(), Group.class));
         }
         return res;
     }

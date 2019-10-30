@@ -3,14 +3,21 @@ package ru.bwsite.android.amopizza;
 import java.util.ArrayList;
 
 public class Product {
-    String gr_name;
-    String title;
-    int imageResourceID;
-    String description;
-    String[] size_price;
+    int id;
+    String name;
+    String img_url;
+    String desc;
+    String label_text;
+    String label_color;
+    SizePrice[] size_price;
 
-    public Product(String gr_name) {
-        this.gr_name = gr_name;
+    public Product(int id, String name, String img_url, String desc, String label_text, String label_color, SizePrice[] size_price) {
+        this.id = id;
+        this.name = name;
+        this.img_url = img_url;
+        this.desc = desc;
+        this.label_text = label_text;
+        this.label_color = label_color;
+        this.size_price = size_price;
     }
-
 }
