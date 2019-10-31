@@ -2,7 +2,6 @@ package ru.bwsite.android.amopizza;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,14 +30,15 @@ public class PizzaActivity extends AppCompatActivity {
         Log.d(TAG, "msg2");
         try {
             Log.d(TAG, "msg3");
+
             String str = httpClient.readGroupInfo();
             Log.d(TAG, str);
             Log.d(TAG, "msg4");
         } catch (IOException e) {
-            Log.d(TAG, "exception1");
+            Log.d(TAG, e.getMessage());
             e.printStackTrace();
         } catch (JSONException e) {
-            Log.d(TAG, "exception2");
+            Log.d(TAG, e.getMessage());
             e.printStackTrace();
         }
         initRecyclerView();
