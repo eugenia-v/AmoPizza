@@ -20,6 +20,32 @@ public class HttpClient {
         jsonParser = new JsonParser();
     }
 
+    public String readGroupInfo() throws IOException, JSONException {
+        String requestURL = "http://amop.bwsite.ru/goods2.json";
+        URL url = new URL(requestURL);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        Log.d(TAG, "msg5");
+        connection.connect();
+        Log.d(TAG, "msg6");
+        InputStream in;
+        int status = connection.getResponseCode();
+        if (status != HttpURLConnection.HTTP_OK) {
+            Log.d(TAG, "msg7");
+            in = connection.getErrorStream();
+        } else {
+            in = connection.getInputStream();
+            Log.d(TAG, "msg8");
+        }
+
+        String response = convertStreamToString(in);
+        //вывести строку, посмотреть че в ней log
+        //Log.d("response", response);
+
+        //List<Group> groups = jsonParser.getGroup(response);
+
+        return response;
+    }
+/*
     public List<Group> readGroupInfo() throws IOException, JSONException {
         String requestURL = "http://amop.bwsite.ru/goods2.json";
         URL url = new URL(requestURL);
@@ -43,6 +69,7 @@ public class HttpClient {
 
         return groups;
     }
+*/
 
     private String convertStreamToString(InputStream stream) throws IOException {
 

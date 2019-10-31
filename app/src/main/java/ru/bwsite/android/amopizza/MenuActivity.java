@@ -16,11 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
+    private static final String TAG = "MenuActivity";
     private Button mPizzaButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("MenuActivity", "onCreate(Bundle) called");
         setContentView(R.layout.activity_menu);
 
         mPizzaButton = findViewById(R.id.pizzaButton);

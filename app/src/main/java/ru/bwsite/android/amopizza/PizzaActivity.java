@@ -15,17 +15,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaActivity extends AppCompatActivity {
+    private static final String TAG = "PizzaActivity";
     private RecyclerView recyclerView;
     private MyAdapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Group> groupList = new ArrayList<>();
+    private HttpClient httpClient = new HttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate(Bundle) called");
+        Log.d(TAG, "msg1");
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
+        Log.d(TAG, "msg2");
+        try {
+            Log.d(TAG, "msg3");
+            String str = httpClient.readGroupInfo();
+            Log.d(TAG, str);
+            Log.d(TAG, "msg4");
+        } catch (IOException e) {
+            Log.d(TAG, "exception1");
+            e.printStackTrace();
+        } catch (JSONException e) {
+            Log.d(TAG, "exception2");
+            e.printStackTrace();
+        }
         initRecyclerView();
-
+        Log.d(TAG, "msg5");
         /*----------------------------------*/
 
 
