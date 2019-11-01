@@ -13,13 +13,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PizzaActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class PizzaActivity extends AppCompatActivity implements Callback<List<Group>> {
     private static final String TAG = "PizzaActivity";
     private RecyclerView recyclerView;
     private MyAdapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Group> groupList = new ArrayList<>();
-    private HttpClient httpClient = new HttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +32,20 @@ public class PizzaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
         Log.d(TAG, "msg2");
         try {
+            GroupApi groupApi = HttpClient.getGroups();
+
             Log.d(TAG, "msg3");
-
-            String str = httpClient.readGroupInfo();
-            Log.d(TAG, str);
+            Call<List<Group>> call = groupApi.loadGroup();
             Log.d(TAG, "msg4");
-        } catch (IOException e) {
-            Log.d(TAG, e.getMessage());
-            e.printStackTrace();
-        } catch (JSONException e) {
-            Log.d(TAG, e.getMessage());
-            e.printStackTrace();
+            //call.enqueue(this);
+            Response<List<Group>> response = call.execute();
+            Log.d(TAG, response.toString());
+            Log.d(TAG, "msg5cll");
+        } catch (Exception e) {
+            Log.d(TAG, "msg12cll");
+            Log.d(TAG, e.toString());
+            Log.d(TAG, e.getStackTrace().toString());
         }
-        initRecyclerView();
-        Log.d(TAG, "msg5");
-        /*----------------------------------*/
-
-
     }
 
     private void initRecyclerView() {
@@ -53,5 +53,25 @@ public class PizzaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myAdapter = new MyAdapter(groupList, this);
         recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onResponse(Call<List<Group>> call, Response<List<Group>> response) {
+        Log.d(TAG, "msg6scf");
+        if (response.isSuccessful()) {
+            List<Group> changesList = response.body();
+            this.groupList = changesList;
+            Log.d(TAG, "msg7okk");
+            initRecyclerView();
+        } else {
+            Log.d(TAG, response.errorBody().toString());
+        }
+    }
+
+    @Override
+    public void onFailure(Call<List<Group>> call, Throwable t) {
+        Log.d(TAG, "msg6fld");
+        Log.d(TAG, t.toString());
+        t.printStackTrace();
     }
 }
