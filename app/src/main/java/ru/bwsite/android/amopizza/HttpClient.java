@@ -5,16 +5,10 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -47,73 +41,7 @@ public class HttpClient {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         Log.d(TAG, "msg10");
+        new ArrayList<String>();
         return retrofit.create(GroupApi.class);
     }
-
-    public String readGroupInfo() throws IOException, JSONException {
-
-
-        /*URL url = new URL(requestURL);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        Log.d(TAG, "msg5");
-        connection.connect();
-        Log.d(TAG, "msg6");
-        InputStream in;
-        int status = connection.getResponseCode();
-        if (status != HttpURLConnection.HTTP_OK) {
-            Log.d(TAG, "msg7");
-            in = connection.getErrorStream();
-        } else {
-            in = connection.getInputStream();
-            Log.d(TAG, "msg8");
-        }
-
-        String response = convertStreamToString(in);
-        //вывести строку, посмотреть че в ней log
-        //Log.d("response", response);
-
-        //List<Group> groups = jsonParser.getGroup(response);
-*/
-        return "";
-    }
-/*
-    public List<Group> readGroupInfo() throws IOException, JSONException {
-        String requestURL = "http://amop.bwsite.ru/goods2.json";
-        URL url = new URL(requestURL);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        connection.connect();
-
-        InputStream in;
-        int status = connection.getResponseCode();
-        if (status != HttpURLConnection.HTTP_OK) {
-            in = connection.getErrorStream();
-        } else {
-            in = connection.getInputStream();
-        }
-
-        String response = convertStreamToString(in);
-        //вывести строку, посмотреть че в ней log
-        //Log.d("response", response);
-
-        List<Group> groups = jsonParser.getGroup(response);
-
-        return groups;
-    }
-*/
-
-    private String convertStreamToString(InputStream stream) throws IOException {
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-        StringBuilder sb = new StringBuilder();
-
-        String line;
-        while ((line = reader.readLine()) != null) {
-            sb.append(line).append("\n");
-        }
-        stream.close();
-
-        return sb.toString();
-    }
-
 }
