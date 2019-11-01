@@ -1,5 +1,6 @@
 package ru.bwsite.android.amopizza;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -37,9 +38,11 @@ public class PizzaActivity extends AppCompatActivity implements Callback<List<Gr
             Log.d(TAG, "msg3");
             Call<List<Group>> call = groupApi.loadGroup();
             Log.d(TAG, "msg4");
-            //call.enqueue(this);
-            Response<List<Group>> response = call.execute();
-            Log.d(TAG, response.toString());
+            call.enqueue(this);
+
+            //new FetchItemsTask().execute();
+            //Response<List<Group>> response = call.execute();
+            //Log.d(TAG, response.toString());
             Log.d(TAG, "msg5cll");
         } catch (Exception e) {
             Log.d(TAG, "msg12cll");
@@ -74,4 +77,26 @@ public class PizzaActivity extends AppCompatActivity implements Callback<List<Gr
         Log.d(TAG, t.toString());
         t.printStackTrace();
     }
+/*
+    private class FetchItemsTask extends AsyncTask<Void,Void,Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                Log.d(TAG, "msg12parrale");
+                GroupApi groupApi = HttpClient.getGroups();
+
+                Log.d(TAG, "msg3");
+                Call<List<Group>> call = groupApi.loadGroup();
+                Log.d(TAG, "msg4");
+                //call.enqueue(this);
+                Response<List<Group>> response = call.execute();
+                Log.d(TAG, response.toString());
+                List<Group> changesList = response.body();
+                Log.d(TAG, changesList.toString());
+            } catch (Exception ioe) {
+                Log.e(TAG, "Failed to fetch URL: ", ioe);
+            }
+            return null;
+        }
+    }*/
 }
