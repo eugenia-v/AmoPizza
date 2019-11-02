@@ -5,9 +5,6 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -16,10 +13,19 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HttpClient {
-    public Logger log = LoggerFactory.getLogger(HttpClient.class);
+/**
+ * подготавливает АPI для получения данных с бэка
+ * выдает соответствующие API с параметрами запроса
+ */
+
+public class ApiCreator {
     static String BASE_URL = "http://amop.bwsite.ru/";
-    private static final String TAG = "HttpClient";
+    private static final String TAG = "ApiCreator";
+
+    /**
+     *
+     * @return объект класса, который имплементит GroupApi
+     */
 
     public static GroupApi getGroups(){
         Log.d(TAG, "msg7");

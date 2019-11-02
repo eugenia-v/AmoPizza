@@ -1,6 +1,5 @@
 package ru.bwsite.android.amopizza;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,9 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,21 +24,15 @@ public class PizzaActivity extends AppCompatActivity implements Callback<List<Gr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate(Bundle) called");
-        Log.d(TAG, "msg1");
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
-        Log.d(TAG, "msg2");
         try {
-            GroupApi groupApi = HttpClient.getGroups();
+            GroupApi groupApi = ApiCreator.getGroups();
 
             Log.d(TAG, "msg3");
-            Call<List<Group>> call = groupApi.loadGroup();
+            Call<List<Group>> call = groupApi.loadGroup();//подготовка к получению данных с бэка
             Log.d(TAG, "msg4");
-            call.enqueue(this);
+            call.enqueue(this);//начинает выполнять асинхронно запрос к бэку
 
-            //new FetchItemsTask().execute();
-            //Response<List<Group>> response = call.execute();
-            //Log.d(TAG, response.toString());
             Log.d(TAG, "msg5cll");
         } catch (Exception e) {
             Log.d(TAG, "msg12cll");
@@ -77,26 +67,4 @@ public class PizzaActivity extends AppCompatActivity implements Callback<List<Gr
         Log.d(TAG, t.toString());
         t.printStackTrace();
     }
-/*
-    private class FetchItemsTask extends AsyncTask<Void,Void,Void> {
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                Log.d(TAG, "msg12parrale");
-                GroupApi groupApi = HttpClient.getGroups();
-
-                Log.d(TAG, "msg3");
-                Call<List<Group>> call = groupApi.loadGroup();
-                Log.d(TAG, "msg4");
-                //call.enqueue(this);
-                Response<List<Group>> response = call.execute();
-                Log.d(TAG, response.toString());
-                List<Group> changesList = response.body();
-                Log.d(TAG, changesList.toString());
-            } catch (Exception ioe) {
-                Log.e(TAG, "Failed to fetch URL: ", ioe);
-            }
-            return null;
-        }
-    }*/
 }
