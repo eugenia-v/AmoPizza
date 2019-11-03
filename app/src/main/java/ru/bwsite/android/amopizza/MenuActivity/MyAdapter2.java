@@ -38,7 +38,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     public void onBindViewHolder(final MyAdapter2.MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        //holder.button.setText(groupList.get(position).gr_name);
+        holder.button.setText(groupList.get(position).gr_name);
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -52,7 +53,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            button = itemView.findViewById(R.id.image);
+            button = itemView.findViewById(R.id.pizzaButton);
         }
     }
 }

@@ -53,15 +53,6 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
             Log.d(TAG, e.getStackTrace().toString());
         }
 
-       /* для Адаптера для ресайкл вью
-        mPizzaButton = findViewById(R.id.pizzaButton);
-        mPizzaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, PizzaActivity.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
      @Override

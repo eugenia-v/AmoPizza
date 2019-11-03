@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity.MenuActivity">
 
     <TextView
         android:id="@+id/pizza"
@@ -17,13 +17,10 @@
         android:textColor="#4E342E"
         android:textSize="30sp"
         android:textStyle="bold" />
-    <Button
-        android:id="@+id/pizzaButton"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:text="@string/pizzaButton"
-        android:textColor="#4E342E"
-        android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 
 </LinearLayout>
