@@ -1,5 +1,7 @@
 package ru.bwsite.android.amopizza.MenuActivity;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ru.bwsite.android.amopizza.DataObjects.Group;
+import ru.bwsite.android.amopizza.PizzaActivity.PizzaActivity;
 import ru.bwsite.android.amopizza.R;
 
 public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
@@ -39,6 +42,14 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.button.setText(groupList.get(position).gr_name);
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.button.setBackgroundResource(R.drawable.bgalt);
+                Intent intent = new Intent(context, PizzaActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
