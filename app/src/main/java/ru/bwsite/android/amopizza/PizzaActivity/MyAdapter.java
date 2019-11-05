@@ -16,14 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.bwsite.android.amopizza.DataObjects.Group;
+import ru.bwsite.android.amopizza.DataObjects.Product;
 import ru.bwsite.android.amopizza.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<Group> productList;
+    private List<Product> productList;
     private PizzaActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Group> pizza, PizzaActivity context) {
+    public MyAdapter(List<Product> pizza, PizzaActivity context) {
         this.productList = pizza;
         this.context = context;
     }
@@ -43,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        //holder.textView.setText(productList.get(position).gr_name);
+        holder.textView.setText(productList.get(position).getName());
 
 /*        Glide.with(context)
                 .load(productList.get(position).imageResourceID)
@@ -71,8 +72,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.image);
             textView = itemView.findViewById(R.id.title);
+            imageView = itemView.findViewById(R.id.image);
             textViewDescription = itemView.findViewById(R.id.description);
             linearLayout = itemView.findViewById(R.id.buttons);
             priceText = itemView.findViewById(R.id.price);

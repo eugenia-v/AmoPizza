@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,8 +38,8 @@ public class PizzaActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
-        Product[] productsArray = getIntent().getSerializableExtra(EXTRA_PRODUCT);
-        productList = getIntent().getSerializableExtra(EXTRA_PRODUCT);
+        Product[] productsArray = getIntent().getParcelableExtra(EXTRA_PRODUCT);
+        productList = Arrays.asList(productsArray);
         initRecyclerView();
 
     }
