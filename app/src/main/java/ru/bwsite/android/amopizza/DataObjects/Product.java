@@ -1,5 +1,8 @@
 package ru.bwsite.android.amopizza.DataObjects;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import ru.bwsite.android.amopizza.DataObjects.SizePrice;
