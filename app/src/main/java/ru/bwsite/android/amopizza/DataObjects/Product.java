@@ -1,5 +1,7 @@
 package ru.bwsite.android.amopizza.DataObjects;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -41,7 +43,7 @@ public class Product implements Parcelable {
         dest.writeString(desc);
         dest.writeString(label_text);
         dest.writeString(label_color);
-        dest.writeList(size_price);
+        dest.writeParcelableList(size_price, 1);
     }
     public static final Parcelable.Creator<Product> CREATOR = new Parcelable.Creator<Product>() {
         public Product createFromParcel(Parcel in) {
@@ -59,7 +61,7 @@ public class Product implements Parcelable {
         desc = in.readString();
         label_text = in.readString();
         label_color = in.readString();
-        in.readList(size_price, ClassLoader.getSystemClassLoader());
+        in.readParcelableList(size_price, ClassLoader.getSystemClassLoader());
     }
 
     public String getName() {

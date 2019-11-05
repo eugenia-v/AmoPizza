@@ -38,7 +38,8 @@ public class PizzaActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
-        Product[] productsArray = getIntent().getParcelableExtra(EXTRA_PRODUCT);
+        //Product productsArray = getIntent().getParcelableExtra(EXTRA_PRODUCT);
+        Product[] productsArray = (Product[]) getIntent().getParcelableArrayExtra(EXTRA_PRODUCT);
         productList = Arrays.asList(productsArray);
         initRecyclerView();
 
