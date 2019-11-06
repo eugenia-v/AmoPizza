@@ -42,42 +42,6 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bgalt"
-
-            android:text="@string/_25"
-            android:textColor="#FFAB91"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="#FFFFFF"
-            android:text="@string/_30"
-            android:textColor="#FFAB91"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="#FFFFFF"
-            android:text="@string/_35"
-            android:textColor="#FFAB91"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="#FFFFFF"
-            android:text="@string/_40"
-            android:textColor="#FFAB91"
-            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout

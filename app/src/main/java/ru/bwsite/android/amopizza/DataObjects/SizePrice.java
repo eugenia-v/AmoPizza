@@ -22,16 +22,6 @@ public class SizePrice implements Parcelable {
     }
 
 
-
-/*
-    public SizePrice(String article, String size, String price) {
-        this.article = article;
-        this.size = size;
-        this.price = price;
-    }
-*/
-
-
     @Override
     public int describeContents() {
         return 0;
