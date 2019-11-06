@@ -17,7 +17,7 @@ public class Product implements Parcelable {
     private String desc;
     private String label_text;
     private String label_color;
-    private List<SizePrice> size_price;
+    private List<SizePrice> size_price = new ArrayList<>();
 
 /*    public Product(int id, String name, String img_url, String desc, String label_text, String label_color, List<SizePrice> size_price) {
         this.id = id;
@@ -43,7 +43,7 @@ public class Product implements Parcelable {
         dest.writeString(desc);
         dest.writeString(label_text);
         dest.writeString(label_color);
-        dest.writeParcelableList(size_price, 1);
+        dest.writeTypedList(size_price);
     }
     public static final Parcelable.Creator<Product> CREATOR = new Parcelable.Creator<Product>() {
         public Product createFromParcel(Parcel in) {
@@ -61,7 +61,7 @@ public class Product implements Parcelable {
         desc = in.readString();
         label_text = in.readString();
         label_color = in.readString();
-        in.readParcelableList(size_price, ClassLoader.getSystemClassLoader());
+        in.readTypedList(size_price, SizePrice.CREATOR);
     }
 
     public String getName() {

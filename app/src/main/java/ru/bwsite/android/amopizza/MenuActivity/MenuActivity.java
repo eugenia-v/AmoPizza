@@ -4,16 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.bwsite.android.amopizza.DataObjects.Group;
-import ru.bwsite.android.amopizza.PizzaActivity.MyAdapter;
-import ru.bwsite.android.amopizza.PizzaActivity.PizzaActivity;
+import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaActivity;
 import ru.bwsite.android.amopizza.R;
 import ru.bwsite.android.amopizza.Services.ApiCreator;
 import ru.bwsite.android.amopizza.Services.GroupApi;
@@ -31,7 +24,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
     private static final String TAG = "MenuActivity";
     private Button mPizzaButton;
     private RecyclerView recyclerView;
-    private MyAdapter2 myAdapter2;
+    private AdapterMenuActivity mAdapterMenuActivity;
     private List<Group> groupList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +71,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter2 = new MyAdapter2(groupList, this);
-        recyclerView.setAdapter(myAdapter2);
+        mAdapterMenuActivity = new AdapterMenuActivity(groupList, this);
+        recyclerView.setAdapter(mAdapterMenuActivity);
     }
 }

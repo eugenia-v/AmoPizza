@@ -12,26 +12,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ru.bwsite.android.amopizza.DataObjects.Group;
 import ru.bwsite.android.amopizza.DataObjects.Product;
 import ru.bwsite.android.amopizza.R;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActivity.MyViewHolder> {
     private List<Product> productList;
     private PizzaActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Product> pizza, PizzaActivity context) {
+    public AdapterPizzaActivity(List<Product> pizza, PizzaActivity context) {
         this.productList = pizza;
         this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdapterPizzaActivity.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_pizza, parent, false);
@@ -45,12 +43,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(productList.get(position).getName());
-
-/*        Glide.with(context)
-                .load(productList.get(position).imageResourceID)
+        Glide.with(context)
+                .load(productList.get(position).getImg_url())
                 .into(holder.imageView);
-        holder.textViewDescription.setText(productList.get(position).description);*/
-
+        holder.textViewDescription.setText(productList.get(position).getDesc());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
