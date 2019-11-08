@@ -61,7 +61,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
                 .into(holder.imageView);
         holder.textViewDescription.setText(productList.get(position).getDesc());
 
-        if (getItemViewType(position) == VIEW_WITH_EXTRA_TEXT_VIEW) {
+/*        if (getItemViewType(position) == VIEW_WITH_EXTRA_TEXT_VIEW) {
             int buttonCount = productList.get(position).getSize_price().size();
             Log.d("createButton1", String.valueOf(position));
 
@@ -77,7 +77,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
 
                 }
             }
-        }
+        }*/
 
     }
 

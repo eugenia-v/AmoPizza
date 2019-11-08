@@ -10,5 +10,6 @@
     <string name="pizza_image">pizza image</string>
     <string name="menu">Меню</string>
     <string name="pizzaButton">Пицца</string>
+    <string name="r">Р</string>
 
 </resources>
