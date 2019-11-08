@@ -11,6 +11,6 @@ public class PizzaButtonsHolder extends AdapterPizzaActivity.MyViewHolder {
 
     public PizzaButtonsHolder(View itemView) {
         super(itemView);
-        this.linearLayout = linearLayout.findViewById(R.id.buttons);
+        this.linearLayout = itemView.findViewById(R.id.buttons);
     }
 }
