@@ -59,7 +59,9 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
                 .into(holder.imageView);
         holder.textViewDescription.setText(productList.get(position).getDesc());
 
-        productList.get(position).getSize_price();
+        holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        AdapterPizzaButtons mAdapterPizzaActivity = new AdapterPizzaButtons(productList.get(position).getSize_price(), context);
+        holder.recyclerView.setAdapter(mAdapterPizzaActivity);
 /*        int buttonCount = productList.get(position).getSize_price().size();
         Log.d("createButton1", String.valueOf(position));
 
@@ -90,6 +92,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
         private TextView textViewDescription;
         private LinearLayout linearLayout;
         private TextView priceText;
+        private RecyclerView recyclerView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -98,6 +101,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             textViewDescription = itemView.findViewById(R.id.description);
             linearLayout = itemView.findViewById(R.id.buttons);
             priceText = itemView.findViewById(R.id.price);
+            recyclerView = itemView.findViewById(R.id.my_recycler_view2);
         }
 
     }
