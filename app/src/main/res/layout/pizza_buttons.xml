@@ -7,4 +7,12 @@
     android:layout_marginTop="10dp"
     android:orientation="horizontal">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:textColor="#FFAB91"
+        android:textSize="18sp" />
+
 </LinearLayout>
