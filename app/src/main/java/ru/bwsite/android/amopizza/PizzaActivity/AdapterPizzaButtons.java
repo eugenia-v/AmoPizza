@@ -47,12 +47,15 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
+        Log.d("position", String.valueOf(position));
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.button.setText(size_price.get(position).getSize());
         int width = mRecyclerView.getMeasuredWidth();
-        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width/size_price.size(), 50));
-
+        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width/size_price.size(), 70));
+        if(size_price.get(position).getSize()!=null && position==0){
+        holder.button.setBackgroundResource(R.drawable.bgalt);
+        }
 
     }
 
