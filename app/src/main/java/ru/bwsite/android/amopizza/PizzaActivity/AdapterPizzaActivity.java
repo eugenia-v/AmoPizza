@@ -62,7 +62,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
         linearLayoutManager = new LinearLayoutManager(context);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         holder.recyclerView.setLayoutManager(linearLayoutManager);
-        AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(productList.get(position).getSize_price(), context);
+        AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(productList.get(position).getSize_price(), context, holder.recyclerView);
         holder.recyclerView.setAdapter(mAdapterPizzaButtons);
 
     }

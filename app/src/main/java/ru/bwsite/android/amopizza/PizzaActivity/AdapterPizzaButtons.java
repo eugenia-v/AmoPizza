@@ -24,10 +24,12 @@ import ru.bwsite.android.amopizza.R;
 public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButtons.MyViewHolder> {
     private List<SizePrice> size_price;
     private Context context;
+    private RecyclerView mRecyclerView;
 
-    public AdapterPizzaButtons(List<SizePrice> size_price, PizzaActivity context) {
+    public AdapterPizzaButtons(List<SizePrice> size_price, PizzaActivity context, RecyclerView recyclerView) {
         this.size_price = size_price;
         this.context = context;
+        this.mRecyclerView = recyclerView;
     }
 
     // Create new views (invoked by the layout manager)
@@ -48,6 +50,12 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.button.setText(size_price.get(position).getSize());
+/*        holder.button.setScaleX();
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams()
+        holder.button.setLayoutParams();*/
+        int width = mRecyclerView.getMeasuredWidth();
+        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width/size_price.size(), 50));
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -58,10 +66,13 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private Button button;
+        private LinearLayout linearLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
+            linearLayout = itemView.findViewById(R.id.buttons);
+
         }
     }
 }
