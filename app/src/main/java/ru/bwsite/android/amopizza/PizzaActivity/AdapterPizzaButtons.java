@@ -50,11 +50,9 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.button.setText(size_price.get(position).getSize());
-/*        holder.button.setScaleX();
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams()
-        holder.button.setLayoutParams();*/
         int width = mRecyclerView.getMeasuredWidth();
         holder.button.setLayoutParams(new LinearLayout.LayoutParams(width/size_price.size(), 50));
+
 
     }
 
