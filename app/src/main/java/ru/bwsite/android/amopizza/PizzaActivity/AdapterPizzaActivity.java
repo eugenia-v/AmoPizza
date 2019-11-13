@@ -28,7 +28,8 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
     private PizzaActivity context;
     private RecyclerView recyclerView2;
     private AdapterPizzaButtons mAdapterPizzaButtons;
-    private RecyclerView.LayoutManager layoutManager2;
+    private LinearLayoutManager linearLayoutManager;
+
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public AdapterPizzaActivity(List<Product> pizza, PizzaActivity context) {
@@ -58,25 +59,11 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
                 .load(productList.get(position).getImg_url())
                 .into(holder.imageView);
         holder.textViewDescription.setText(productList.get(position).getDesc());
-
-        holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        AdapterPizzaButtons mAdapterPizzaActivity = new AdapterPizzaButtons(productList.get(position).getSize_price(), context);
-        holder.recyclerView.setAdapter(mAdapterPizzaActivity);
-/*        int buttonCount = productList.get(position).getSize_price().size();
-        Log.d("createButton1", String.valueOf(position));
-
-        for (int i = 0; i < buttonCount - 2; i++) {
-            Log.d("createButton2", String.valueOf(position));
-            if (productList.get(position).getSize_price().get(i).getSize() != null) {
-                Log.d("createButton3", String.valueOf(position));
-                holder.priceText.setText(productList.get(position).getSize_price().get(i).getPrice());
-                ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                Button myButton = new Button(context);
-                myButton.setText(productList.get(position).getSize_price().get(i).getSize());
-                holder.linearLayout.addView(myButton, lp);
-
-            }
-        }*/
+        linearLayoutManager = new LinearLayoutManager(context);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        holder.recyclerView.setLayoutManager(linearLayoutManager);
+        AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(productList.get(position).getSize_price(), context);
+        holder.recyclerView.setAdapter(mAdapterPizzaButtons);
 
     }
 
