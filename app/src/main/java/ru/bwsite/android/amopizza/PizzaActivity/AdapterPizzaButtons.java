@@ -27,6 +27,8 @@ import ru.bwsite.android.amopizza.DataObjects.SizePrice;
 import ru.bwsite.android.amopizza.MenuActivity.AdapterMenuActivity;
 import ru.bwsite.android.amopizza.R;
 
+import static android.view.View.GONE;
+
 public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButtons.MyViewHolder> {
     private List<SizePrice> size_price;
     private Context context;
@@ -61,16 +63,16 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         if (size_price.get(position).getSize() != null && position == 0) {
             holder.button.setBackgroundResource(R.drawable.bgalt);
         }*/
-DisplayMetrics dm = new DisplayMetrics();
+        DisplayMetrics dm = new DisplayMetrics();
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point point = new Point();
         display.getSize(point);
-        Log.d("size",point.toString());
+        Log.d("size", point.toString());
         int pixel = point.x;
-        Log.d("size",String.valueOf(pixel));
-        int width = pixel - (80*(int)context.getResources().getDisplayMetrics().density);
-        Log.d("size",String.valueOf(width));
+        Log.d("size", String.valueOf(pixel));
+        int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
+        Log.d("size", String.valueOf(width));
 
         holder.bindSizePrice(size_price.get(position), width, size_price.size(), position);
 
@@ -95,11 +97,13 @@ DisplayMetrics dm = new DisplayMetrics();
 
         public void bindSizePrice(SizePrice size, int width, int buttonsCount, int position) {
             button.setText(size.getSize());
-            button.setLayoutParams(new LinearLayout.LayoutParams(width/ buttonsCount, 70));
+            button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
             if (size.getSize() != null && position == 0) {
                 button.setBackgroundResource(R.drawable.bgalt);
             }
-
+            if (size.getSize()==null){
+                button.setVisibility(View.GONE);
+            }
         }
     }
 }
