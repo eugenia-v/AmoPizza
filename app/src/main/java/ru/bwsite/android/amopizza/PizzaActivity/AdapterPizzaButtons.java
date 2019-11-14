@@ -1,11 +1,16 @@
 package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Size;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -49,16 +54,25 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
+
         /*holder.button.setText(size_price.get(position).getSize());
         int width = mRecyclerView.getMeasuredWidth();
         holder.button.setLayoutParams(new LinearLayout.LayoutParams(width / size_price.size(), 70));
         if (size_price.get(position).getSize() != null && position == 0) {
             holder.button.setBackgroundResource(R.drawable.bgalt);
         }*/
-        //Log.d("rv", String.valueOf(mRecyclerView.getScrollState()));
-        holder.bindSizePrice(size_price.get(position), mRecyclerView.getMeasuredWidth(), size_price.size(), position);
+DisplayMetrics dm = new DisplayMetrics();
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        Log.d("size",point.toString());
+        int pixel = point.x;
+        Log.d("size",String.valueOf(pixel));
+        int width = pixel - (80*(int)context.getResources().getDisplayMetrics().density);
+        Log.d("size",String.valueOf(width));
+
+        holder.bindSizePrice(size_price.get(position), width, size_price.size(), position);
 
     }
 
@@ -81,7 +95,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         public void bindSizePrice(SizePrice size, int width, int buttonsCount, int position) {
             button.setText(size.getSize());
-            button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
+            button.setLayoutParams(new LinearLayout.LayoutParams(width/ buttonsCount, 70));
             if (size.getSize() != null && position == 0) {
                 button.setBackgroundResource(R.drawable.bgalt);
             }
