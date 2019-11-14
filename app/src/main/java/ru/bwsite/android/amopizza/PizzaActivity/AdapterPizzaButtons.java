@@ -2,6 +2,7 @@ package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
 import android.util.Log;
+import android.util.Size;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,14 +51,17 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         Log.d("position", String.valueOf(position));
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.button.setText(size_price.get(position).getSize());
+        /*holder.button.setText(size_price.get(position).getSize());
         int width = mRecyclerView.getMeasuredWidth();
-        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width/size_price.size(), 70));
-        if(size_price.get(position).getSize()!=null && position==0){
-        holder.button.setBackgroundResource(R.drawable.bgalt);
-        }
+        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width / size_price.size(), 70));
+        if (size_price.get(position).getSize() != null && position == 0) {
+            holder.button.setBackgroundResource(R.drawable.bgalt);
+        }*/
+        //Log.d("rv", String.valueOf(mRecyclerView.getScrollState()));
+        holder.bindSizePrice(size_price.get(position), mRecyclerView.getMeasuredWidth(), size_price.size(), position);
 
     }
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
@@ -73,6 +77,14 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
             super(itemView);
             button = itemView.findViewById(R.id.button);
             linearLayout = itemView.findViewById(R.id.buttons);
+        }
+
+        public void bindSizePrice(SizePrice size, int width, int buttonsCount, int position) {
+            button.setText(size.getSize());
+            button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
+            if (size.getSize() != null && position == 0) {
+                button.setBackgroundResource(R.drawable.bgalt);
+            }
 
         }
     }
