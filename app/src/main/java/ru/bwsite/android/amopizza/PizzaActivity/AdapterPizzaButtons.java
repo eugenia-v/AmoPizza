@@ -61,13 +61,14 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public int getItemViewType(int position) {
 
-        if (position == 1) {
-            return VIEW_WITH_PRICE_TEXT;
-        } else {
+        if (position == position % 2) {
             return VIEW_ORDINARY;
+        } else {
+            return VIEW_WITH_PRICE_TEXT;
         }
 
     }
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
@@ -89,9 +90,11 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         Log.d("size", String.valueOf(pixel));
         int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
         Log.d("size", String.valueOf(width));
-
-        holder.bindSizePrice(size_price.get(position), width, size_price.size(), position);
-        ((PriceTextHolder)holder).bindSizePrice(size_price.get(position), width, size_price.size(), position);
+        if (holder.getItemViewType() == VIEW_ORDINARY) {
+            ((MyViewHolder) holder).bindSize(size_price.get(position), width, size_price.size(), position);
+        } else {
+            ((PriceTextHolder) holder).bindPrice(size_price.get(position), width, size_price.size(), position);
+        }
 
     }
 
@@ -115,17 +118,14 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         }
 
-        public void bindSizePrice(SizePrice size_price, int width, int buttonsCount, int position) {
+        public void bindSize(SizePrice size_price, int width, int buttonsCount, int position) {
             button.setText(size_price.getSize());
             button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
             if (size_price.getSize() != null && position == 0) {
                 button.setBackgroundResource(R.drawable.bgalt);
-                priceText.setText(size_price.getPrice());
-                Log.d("buttons", size_price.getPrice());
             }
             if (size_price.getSize() == null) {
                 button.setVisibility(View.GONE);
-                rub_image.setVisibility(View.GONE);
             }
         }
     }

@@ -18,7 +18,7 @@ public class PriceTextHolder extends AdapterPizzaButtons.MyViewHolder {
         priceText = itemView.findViewById(R.id.price);
         rub_image = itemView.findViewById(R.id.rub_image);
     }
-    public void bindSizePrice(SizePrice size_price, int width, int buttonsCount, int position) {
+    public void bindPrice(SizePrice size_price, int width, int buttonsCount, int position) {
         if (size_price.getSize() != null && position == 0) {
             priceText.setText(size_price.getPrice());
             Log.d("buttons", size_price.getPrice());
