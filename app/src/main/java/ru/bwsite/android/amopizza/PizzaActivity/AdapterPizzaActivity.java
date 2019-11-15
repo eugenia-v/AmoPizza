@@ -105,14 +105,17 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             recyclerView.setAdapter(mAdapterPizzaButtons);
             int buttonCount = recyclerView.getChildCount();
             priceText.setText(product.getSize_price().get(0).getPrice());
-            for(int i = 0; i < buttonCount; i++)
-            recyclerView.getChildAt(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final int index;
-                    priceText.setText(product.getSize_price().get(i).getPrice());
-                }
-            });
+            for(int i = 0; i < buttonCount; i++) {
+                final String priceString = product.getSize_price().get(i).getPrice();
+
+                recyclerView.getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final int index;
+                        priceText.setText(priceString);
+                    }
+                });
+            }
         }
     }
 }
