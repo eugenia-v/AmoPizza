@@ -61,13 +61,12 @@
             android:layout_height="wrap_content"
             android:textColor="#4E342E"
             android:textSize="20sp" />
-        <TextView
-            android:id="@+id/rub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/rub_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:textColor="#4E342E"
-            android:text="@string/r"
-            android:textSize="20sp" />
+            android:contentDescription="@string/rub_image" />
 
     </LinearLayout>
 </LinearLayout>

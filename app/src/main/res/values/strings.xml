@@ -11,5 +11,6 @@
     <string name="menu">Меню</string>
     <string name="pizzaButton">Пицца</string>
     <string name="r">Р</string>
+    <string name="rub_image">rub_image</string>
 
 </resources>

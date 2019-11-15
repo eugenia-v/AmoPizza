@@ -34,7 +34,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private Context context;
     private RecyclerView mRecyclerView;
 
-    public AdapterPizzaButtons(List<SizePrice> size_price, PizzaActivity context, RecyclerView recyclerView) {
+    public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView) {
         this.size_price = size_price;
         this.context = context;
         this.mRecyclerView = recyclerView;
@@ -48,7 +48,10 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.pizza_buttons, parent, false);
 
-        return new AdapterPizzaButtons.MyViewHolder(view);
+        View itemViewParent = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_pizza, parent, false);
+
+        return new AdapterPizzaButtons.MyViewHolder(view, itemViewParent);
 
     }
 
@@ -88,21 +91,28 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private Button button;
         private LinearLayout linearLayout;
+        private TextView priceText;
+        private ImageView rub_image;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView, View itemViewParent) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
             linearLayout = itemView.findViewById(R.id.buttons);
+            priceText = itemViewParent.findViewById(R.id.price);
+            rub_image = itemViewParent.findViewById(R.id.rub_image);
         }
 
-        public void bindSizePrice(SizePrice size, int width, int buttonsCount, int position) {
-            button.setText(size.getSize());
+        public void bindSizePrice(SizePrice size_price, int width, int buttonsCount, int position) {
+            button.setText(size_price.getSize());
             button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
-            if (size.getSize() != null && position == 0) {
+            if (size_price.getSize() != null && position == 0) {
                 button.setBackgroundResource(R.drawable.bgalt);
+                priceText.setText(size_price.getPrice());
+                Log.d("buttons", size_price.getPrice());
             }
-            if (size.getSize()==null){
+            if (size_price.getSize()==null){
                 button.setVisibility(View.GONE);
+                rub_image.setVisibility(View.GONE);
             }
         }
     }

@@ -30,7 +30,6 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
     private AdapterPizzaButtons mAdapterPizzaButtons;
     private LinearLayoutManager linearLayoutManager;
 
-
     // Provide a suitable constructor (depends on the kind of dataset)
     public AdapterPizzaActivity(List<Product> pizza, PizzaActivity context) {
         this.productList = pizza;
@@ -54,7 +53,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(productList.get(position).getName());
+        /*holder.textView.setText(productList.get(position).getName());
         Glide.with(context)
                 .load(productList.get(position).getImg_url())
                 .into(holder.imageView);
@@ -63,7 +62,8 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         holder.recyclerView.setLayoutManager(linearLayoutManager);
         AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(productList.get(position).getSize_price(), context, holder.recyclerView);
-        holder.recyclerView.setAdapter(mAdapterPizzaButtons);
+        holder.recyclerView.setAdapter(mAdapterPizzaButtons);*/
+        holder.bindProduct(productList.get(position), context, linearLayoutManager);
 
     }
 
@@ -89,6 +89,23 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             linearLayout = itemView.findViewById(R.id.buttons);
             priceText = itemView.findViewById(R.id.price);
             recyclerView = itemView.findViewById(R.id.my_recycler_view2);
+        }
+
+        public void bindProduct(Product product, Context context, LinearLayoutManager linearLayoutManager) {
+            textView.setText(product.getName());
+            Glide.with(context)
+                    .load(product.getImg_url())
+                    .into(imageView);
+            textViewDescription.setText(product.getDesc());
+            linearLayoutManager = new LinearLayoutManager(context);
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(product.getSize_price(), context, recyclerView);
+            recyclerView.setAdapter(mAdapterPizzaButtons);
+/*            int buttonCount = recyclerView.getChildCount();
+            for (int i = 0; i < buttonCount; i++) {
+                if()
+            }*/
         }
 
     }
