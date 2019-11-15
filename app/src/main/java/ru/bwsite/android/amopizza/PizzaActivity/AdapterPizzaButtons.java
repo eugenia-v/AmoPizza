@@ -33,8 +33,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private List<SizePrice> size_price;
     private Context context;
     private RecyclerView mRecyclerView;
-    private static final int VIEW_ORDINARY = 0;
-    private static final int VIEW_WITH_PRICE_TEXT = 1;
+
 
     public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView) {
         this.size_price = size_price;
@@ -46,28 +45,14 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public AdapterPizzaButtons.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        if (viewType == VIEW_WITH_PRICE_TEXT) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.pizza_price, parent, false);
-            return new PriceTextHolder(view);
-        } else {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.pizza_buttons, parent, false);
 
-            return new AdapterPizzaButtons.MyViewHolder(view);
-        }
-    }
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.pizza_buttons, parent, false);
 
-    @Override
-    public int getItemViewType(int position) {
-
-        if (position == position % 2) {
-            return VIEW_ORDINARY;
-        } else {
-            return VIEW_WITH_PRICE_TEXT;
-        }
+        return new AdapterPizzaButtons.MyViewHolder(view);
 
     }
+
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
@@ -90,11 +75,8 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         Log.d("size", String.valueOf(pixel));
         int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
         Log.d("size", String.valueOf(width));
-        if (holder.getItemViewType() == VIEW_ORDINARY) {
-            ((MyViewHolder) holder).bindSize(size_price.get(position), width, size_price.size(), position);
-        } else {
-            ((PriceTextHolder) holder).bindPrice(size_price.get(position), width, size_price.size(), position);
-        }
+        holder.bindSize(size_price.get(position), width, size_price.size(), position);
+
 
     }
 
@@ -108,8 +90,6 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private Button button;
         private LinearLayout linearLayout;
-        private TextView priceText;
-        private ImageView rub_image;
 
         public MyViewHolder(View itemView) {
             super(itemView);
