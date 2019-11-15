@@ -89,9 +89,10 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             linearLayout = itemView.findViewById(R.id.buttons);
             priceText = itemView.findViewById(R.id.price);
             recyclerView = itemView.findViewById(R.id.my_recycler_view2);
+            priceText = itemView.findViewById(R.id.price);
         }
 
-        public void bindProduct(Product product, Context context, LinearLayoutManager linearLayoutManager) {
+        public void bindProduct(final Product product, Context context, LinearLayoutManager linearLayoutManager) {
             textView.setText(product.getName());
             Glide.with(context)
                     .load(product.getImg_url())
@@ -102,12 +103,16 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             recyclerView.setLayoutManager(linearLayoutManager);
             AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(product.getSize_price(), context, recyclerView);
             recyclerView.setAdapter(mAdapterPizzaButtons);
-/*            int buttonCount = recyclerView.getChildCount();
-            for (int i = 0; i < buttonCount; i++) {
-                if()
-            }*/
+            int buttonCount = recyclerView.getChildCount();
+            priceText.setText(product.getSize_price().get(0).getPrice());
+            for(int i = 0; i < buttonCount; i++)
+            recyclerView.getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final int index;
+                    priceText.setText(product.getSize_price().get(i).getPrice());
+                }
+            });
         }
-
     }
-
 }
