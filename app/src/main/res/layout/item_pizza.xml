@@ -45,28 +45,4 @@
         android:layout_marginBottom="5dp"
         />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|right"
-
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="RtlHardcoded">
-
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#4E342E"
-            android:textSize="20sp" />
-        <ImageView
-            android:id="@+id/rub_image"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:textColor="#4E342E"
-            android:contentDescription="@string/rub_image" />
-
-    </LinearLayout>
 </LinearLayout>
