@@ -76,8 +76,9 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         Log.d("size", String.valueOf(pixel));
         int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
         Log.d("size", String.valueOf(width));
-        holder.bindSize(size_price.get(position), width, size_price.size(), position);
+        holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
         // тут прицепить onClick и вызвать mAdapterPizzaActivityMyViewHolder.setPriceString("");
+
     }
 
 
@@ -98,7 +99,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         }
 
-        public void bindSize(SizePrice size_price, int width, int buttonsCount, int position) {
+        public void bindSize(final SizePrice size_price, int width, int buttonsCount, int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
             button.setText(size_price.getSize());
             button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
             if (size_price.getSize() != null && position == 0) {
@@ -107,6 +108,12 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
             if (size_price.getSize() == null) {
                 button.setVisibility(View.GONE);
             }
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mAdapterPizzaActivityMyViewHolder.setPriceString(size_price.getPrice());
+                }
+            });
         }
     }
 }

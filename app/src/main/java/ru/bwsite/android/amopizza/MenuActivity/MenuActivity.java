@@ -14,6 +14,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 import ru.bwsite.android.amopizza.DataObjects.Group;
 import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaActivity;
 import ru.bwsite.android.amopizza.R;
@@ -34,14 +35,11 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
         try {
             GroupApi groupApi = ApiCreator.getGroups();
 
-            Log.d(TAG, "msg3");
             Call<List<Group>> call = groupApi.loadGroup();//подготовка к получению данных с бэка
-            Log.d(TAG, "msg4");
             call.enqueue(this);//начинает выполнять асинхронно запрос к бэку
 
-            Log.d(TAG, "msg5cll");
         } catch (Exception e) {
-            Log.d(TAG, "msg12cll");
+            Log.d(TAG, "error");
             Log.d(TAG, e.toString());
             Log.d(TAG, e.getStackTrace().toString());
         }
@@ -50,11 +48,9 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
 
      @Override
     public void onResponse(Call<List<Group>> call, Response<List<Group>> response) {
-        Log.d(TAG, "msg6scf");
         if (response.isSuccessful()) {
             List<Group> changesList = response.body();
             this.groupList = changesList;
-            Log.d(TAG, "msg7okk");
             initRecyclerView();
         } else {
             Log.d(TAG, response.errorBody().toString());
@@ -63,7 +59,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
 
     @Override
     public void onFailure(Call<List<Group>> call, Throwable t) {
-        Log.d(TAG, "msg6fld");
+        Log.d(TAG, "failure");
         Log.d(TAG, t.toString());
         t.printStackTrace();
     }

@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import ru.bwsite.android.amopizza.DataObjects.Group;
 
+
 /**
  * описание эндпоинтов, к которым хотим обращаться
  * прописываем, что должен вовр-ть метод loadGroup()
