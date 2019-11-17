@@ -33,12 +33,13 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private List<SizePrice> size_price;
     private Context context;
     private RecyclerView mRecyclerView;
+    private AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder;
 
-
-    public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView) {
+    public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView, AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
         this.size_price = size_price;
         this.context = context;
         this.mRecyclerView = recyclerView;
+        this.mAdapterPizzaActivityMyViewHolder = mAdapterPizzaActivityMyViewHolder;
     }
 
     // Create new views (invoked by the layout manager)
@@ -76,8 +77,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
         Log.d("size", String.valueOf(width));
         holder.bindSize(size_price.get(position), width, size_price.size(), position);
-
-
+        // тут прицепить onClick и вызвать mAdapterPizzaActivityMyViewHolder.setPriceString("");
     }
 
 
