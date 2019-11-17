@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ru.bwsite.android.amopizza.DataObjects.Product;
@@ -27,6 +28,7 @@ import ru.bwsite.android.amopizza.DataObjects.SizePrice;
 import ru.bwsite.android.amopizza.MenuActivity.AdapterMenuActivity;
 import ru.bwsite.android.amopizza.R;
 
+import static android.graphics.Color.TRANSPARENT;
 import static android.view.View.GONE;
 
 public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButtons.MyViewHolder> {
@@ -60,11 +62,11 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
 
-        /*holder.button.setText(size_price.get(position).getSize());
+        /*holder.button_menu.setText(size_price.get(position).getSize());
         int width = mRecyclerView.getMeasuredWidth();
-        holder.button.setLayoutParams(new LinearLayout.LayoutParams(width / size_price.size(), 70));
+        holder.button_menu.setLayoutParams(new LinearLayout.LayoutParams(width / size_price.size(), 70));
         if (size_price.get(position).getSize() != null && position == 0) {
-            holder.button.setBackgroundResource(R.drawable.bgalt);
+            holder.button_menu.setBackgroundResource(R.drawable.bgalt);
         }*/
         DisplayMetrics dm = new DisplayMetrics();
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -99,14 +101,14 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         }
 
-        public void bindSize(final SizePrice size_price, int width, int buttonsCount, int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
+        public void bindSize(final SizePrice size_price, int width, int buttonsCount, final int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
             button.setText(size_price.getSize());
             button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
-            if (size_price.getSize() != null && position == 0) {
-                button.setBackgroundResource(R.drawable.bgalt);
-            }
             if (size_price.getSize() == null) {
                 button.setVisibility(View.GONE);
+            }
+            if(size_price.getPrice().equals(mAdapterPizzaActivityMyViewHolder.getPriceText())){
+                button.setBackgroundColor(R.drawable.bgalt);
             }
             button.setOnClickListener(new View.OnClickListener() {
                 @Override

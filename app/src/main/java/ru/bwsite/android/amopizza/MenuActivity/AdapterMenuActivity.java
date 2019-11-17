@@ -46,7 +46,7 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //holder.button.setBackgroundResource(R.drawable.bgalt);
+                //holder.button_menu.setBackgroundResource(R.drawable.bgalt);
                 //Intent intent = new Intent(context, PizzaActivity.class);
                 List <Product> productsList = groupList.get(position).products;
                 Intent intent = PizzaActivity.newIntent(context, (ArrayList) productsList);

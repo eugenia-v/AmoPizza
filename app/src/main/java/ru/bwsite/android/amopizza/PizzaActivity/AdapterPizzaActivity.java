@@ -92,7 +92,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             priceText = itemView.findViewById(R.id.price);
         }
 
-        public void setPriceString(String priceString){
+        public void setPriceString(String priceString) {
             priceText.setText(priceString);
         }
 
@@ -109,6 +109,10 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             recyclerView.setAdapter(mAdapterPizzaButtons);
             priceText.setText(product.getSize_price().get(0).getPrice());
 
+        }
+
+        public TextView getPriceText() {
+            return priceText;
         }
     }
 }
