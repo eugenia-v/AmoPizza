@@ -73,13 +73,9 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         Display display = wm.getDefaultDisplay();
         Point point = new Point();
         display.getSize(point);
-        Log.d("size", point.toString());
         int pixel = point.x;
-        Log.d("size", String.valueOf(pixel));
-        int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);
-        Log.d("size", String.valueOf(width));
+        int width = pixel - (80 * (int) context.getResources().getDisplayMetrics().density);//from 80dp to pixel
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
-        // тут прицепить onClick и вызвать mAdapterPizzaActivityMyViewHolder.setPriceString("");
 
     }
 
@@ -101,7 +97,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         }
 
-        public void bindSize(final SizePrice size_price, int width, int buttonsCount, final int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
+        public void bindSize(final SizePrice size_price, int width,  int buttonsCount, final int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
             button.setText(size_price.getSize());
             button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
             if (size_price.getSize() == null) {
