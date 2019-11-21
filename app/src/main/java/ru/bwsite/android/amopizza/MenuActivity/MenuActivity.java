@@ -15,18 +15,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import ru.bwsite.android.amopizza.DataObjects.Group;
+import ru.bwsite.android.amopizza.DataObjects.Groupp;
 import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaActivity;
 import ru.bwsite.android.amopizza.R;
 import ru.bwsite.android.amopizza.Services.ApiCreator;
 import ru.bwsite.android.amopizza.Services.GroupApi;
 
-public class MenuActivity extends AppCompatActivity implements Callback<List<Group>> {
+public class MenuActivity extends AppCompatActivity implements Callback<List<Groupp>> {
     private static final String TAG = "MenuActivity";
     private Button mPizzaButton;
     private RecyclerView recyclerView;
     private AdapterMenuActivity mAdapterMenuActivity;
-    private List<Group> groupList = new ArrayList<>();
+    private List<Groupp> groupList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
         try {
             GroupApi groupApi = ApiCreator.getGroups();
 
-            Call<List<Group>> call = groupApi.loadGroup();//подготовка к получению данных с бэка
+            Call<List<Groupp>> call = groupApi.loadGroup();//подготовка к получению данных с бэка
             call.enqueue(this);//начинает выполнять асинхронно запрос к бэку
 
         } catch (Exception e) {
@@ -47,9 +47,9 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
     }
 
      @Override
-    public void onResponse(Call<List<Group>> call, Response<List<Group>> response) {
+    public void onResponse(Call<List<Groupp>> call, Response<List<Groupp>> response) {
         if (response.isSuccessful()) {
-            List<Group> changesList = response.body();
+            List<Groupp> changesList = response.body();
             this.groupList = changesList;
             initRecyclerView();
         } else {
@@ -58,7 +58,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
     }
 
     @Override
-    public void onFailure(Call<List<Group>> call, Throwable t) {
+    public void onFailure(Call<List<Groupp>> call, Throwable t) {
         Log.d(TAG, "failure");
         Log.d(TAG, t.toString());
         t.printStackTrace();

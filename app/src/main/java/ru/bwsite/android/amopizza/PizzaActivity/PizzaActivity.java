@@ -21,7 +21,6 @@ public class PizzaActivity extends AppCompatActivity  {
     private RecyclerView recyclerView;
     private RecyclerView recyclerView2;
     private AdapterPizzaActivity mAdapterPizzaActivity;
-    private AdapterPizzaButtons mAdapterPizzaButtons;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.LayoutManager layoutManager2;
     private List<Product> productsList;
