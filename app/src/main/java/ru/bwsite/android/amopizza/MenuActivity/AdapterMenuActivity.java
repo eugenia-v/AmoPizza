@@ -11,18 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.bwsite.android.amopizza.DataObjects.Groupp;
+import ru.bwsite.android.amopizza.DataObjects.GroupProduct;
 import ru.bwsite.android.amopizza.PizzaActivity.PizzaActivity;
 import ru.bwsite.android.amopizza.R;
 import ru.bwsite.android.amopizza.DataObjects.Product;
 
 public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivity.MyViewHolder> {
 
-    private List<Groupp> groupList;
+    private List<GroupProduct> groupList;
     private MenuActivity context;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public AdapterMenuActivity(List<Groupp> groups, MenuActivity context) {
+    public AdapterMenuActivity(List<GroupProduct> groups, MenuActivity context) {
         this.groupList = groups;
         this.context = context;
     }
