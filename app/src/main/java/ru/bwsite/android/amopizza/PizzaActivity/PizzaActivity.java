@@ -30,7 +30,6 @@ public class PizzaActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
         productsList = getIntent().getParcelableArrayListExtra(EXTRA_PRODUCT);
         initRecyclerView();
-
     }
     private void initRecyclerView(){
         recyclerView = findViewById(R.id.my_recycler_view);
@@ -39,5 +38,4 @@ public class PizzaActivity extends AppCompatActivity  {
         mAdapterPizzaActivity = new AdapterPizzaActivity(productsList, this);
         recyclerView.setAdapter(mAdapterPizzaActivity);
     }
-
 }
