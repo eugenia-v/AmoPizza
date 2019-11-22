@@ -21,11 +21,13 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private Context context;
     private AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder;
     private int selectedItem = 0;
+    private int width;
 
-    public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView, AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
+    public AdapterPizzaButtons(List<SizePrice> size_price, Context context, AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder, int width) {
         this.size_price = size_price;
         this.context = context;
         this.mAdapterPizzaActivityMyViewHolder = mAdapterPizzaActivityMyViewHolder;
+        this.width = width;
     }
 
     // Create new views (invoked by the layout manager)
@@ -45,13 +47,13 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
 
-        DisplayMetrics dm = new DisplayMetrics();
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        int pixel = point.x;
-        int width = pixel - (88 * (int) context.getResources().getDisplayMetrics().density);//from 80dp to pixel
+        //DisplayMetrics dm = new DisplayMetrics();
+        //WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        //Display display = wm.getDefaultDisplay();
+        //Point point = new Point();
+        //display.getSize(point);
+       //int pixel = point.x;
+       //int width = pixel - (88 * (int) context.getResources().getDisplayMetrics().density);//from 80dp to pixel
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
         if (position == selectedItem)
             holder.button.setBackgroundResource(R.drawable.bgalt);
@@ -80,7 +82,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         public void bindSize(final SizePrice size_price, int width, int buttonsCount, final int position, final AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
             button.setText(size_price.getSize());
-            button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 70));
+            button.setLayoutParams(new LinearLayout.LayoutParams(width / buttonsCount, 50));
             if (size_price.getSize() == null) {
                 button.setVisibility(View.GONE);
             }

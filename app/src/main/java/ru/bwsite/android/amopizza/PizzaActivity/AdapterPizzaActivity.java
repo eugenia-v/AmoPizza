@@ -1,6 +1,8 @@
 package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +37,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_pizza, parent, false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, this);
 
     }
 
@@ -44,6 +46,7 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
         holder.bindProduct(productList.get(position), context, linearLayoutManager);
 
     }
@@ -61,16 +64,18 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
         private LinearLayout linearLayout;
         private TextView priceText;
         private RecyclerView recyclerView;
+        private AdapterPizzaActivity parentAdapter;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView, AdapterPizzaActivity parentAdapter){
             super(itemView);
             textView = itemView.findViewById(R.id.title);
             imageView = itemView.findViewById(R.id.image);
             textViewDescription = itemView.findViewById(R.id.description);
-            linearLayout = itemView.findViewById(R.id.buttons);
+            linearLayout = itemView.findViewById(R.id.linearlayout_itempizza);
             priceText = itemView.findViewById(R.id.price);
             recyclerView = itemView.findViewById(R.id.my_recycler_view2);
             priceText = itemView.findViewById(R.id.price);
+            this.parentAdapter = parentAdapter;
         }
 
         public void setPriceString(String priceString) {
@@ -86,11 +91,19 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
             linearLayoutManager = new LinearLayoutManager(context);
             linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
             recyclerView.setLayoutManager(linearLayoutManager);
-            AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(product.getSize_price(), context, recyclerView, this);
+            int width = parentAdapter.pxToDp(linearLayout.getMeasuredWidth());
+            Log.d("width", String.valueOf(width));
+
+            AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(product.getSize_price(), context,this, width);
             recyclerView.setAdapter(mAdapterPizzaButtons);
             priceText.setText(product.getSize_price().get(0).getPrice());
 
         }
+    }
 
+    public int pxToDp(int px) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+        return dp;
     }
 }
