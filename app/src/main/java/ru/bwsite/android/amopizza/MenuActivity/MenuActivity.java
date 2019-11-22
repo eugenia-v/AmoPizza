@@ -16,7 +16,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import ru.bwsite.android.amopizza.DataObjects.GroupProduct;
-import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaActivity;
 import ru.bwsite.android.amopizza.R;
 import ru.bwsite.android.amopizza.Services.ApiCreator;
 import ru.bwsite.android.amopizza.Services.GroupApi;
