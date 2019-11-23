@@ -45,13 +45,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
 
-        DisplayMetrics dm = new DisplayMetrics();
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        int pixel = point.x;
-        int width = pixel - (88 * (int) context.getResources().getDisplayMetrics().density);//from 80dp to pixel
+        int width = screenSizePx() - dpToPx(64);//64 - отступ кнопок от края экрана
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
         if (position == selectedItem)
             holder.button.setBackgroundResource(R.drawable.bgalt);
@@ -98,5 +92,18 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private void changeColor(int i) {
         selectedItem = i;
         notifyDataSetChanged();
+    }
+
+    public int dpToPx(int dp) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+    }
+
+    public int screenSizePx(){
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        return point.x;
     }
 }
