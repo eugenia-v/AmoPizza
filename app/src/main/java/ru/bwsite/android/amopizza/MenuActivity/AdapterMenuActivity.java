@@ -32,7 +32,7 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
     public AdapterMenuActivity.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_button, parent, false);
+                .inflate(R.layout.item_menu_button, parent, false);
 
         return new AdapterMenuActivity.MyViewHolder(view);
     }

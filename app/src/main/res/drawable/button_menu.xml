@@ -4,5 +4,5 @@
         android:state_pressed="true"
         android:drawable="@color/colorAlt" />
 
-    <item android:drawable="@color/colorWhite" />
+    <item android:drawable="@drawable/shadow_gray_button" />
 </selector>
