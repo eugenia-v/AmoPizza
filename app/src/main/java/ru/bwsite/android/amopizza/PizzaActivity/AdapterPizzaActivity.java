@@ -1,26 +1,17 @@
 package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import ru.bwsite.android.amopizza.DataObjects.Product;
-import ru.bwsite.android.amopizza.DataObjects.SizePrice;
 import ru.bwsite.android.amopizza.R;
 
 public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActivity.MyViewHolder> {
@@ -53,16 +44,6 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        /*holder.textView.setText(productList.get(position).getName());
-        Glide.with(context)
-                .load(productList.get(position).getImg_url())
-                .into(holder.imageView);
-        holder.textViewDescription.setText(productList.get(position).getDesc());
-        linearLayoutManager = new LinearLayoutManager(context);
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        holder.recyclerView.setLayoutManager(linearLayoutManager);
-        AdapterPizzaButtons mAdapterPizzaButtons = new AdapterPizzaButtons(productList.get(position).getSize_price(), context, holder.recyclerView);
-        holder.recyclerView.setAdapter(mAdapterPizzaButtons);*/
         holder.bindProduct(productList.get(position), context, linearLayoutManager);
 
     }
@@ -111,8 +92,5 @@ public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActiv
 
         }
 
-        public TextView getPriceText() {
-            return priceText;
-        }
     }
 }

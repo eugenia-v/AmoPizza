@@ -1,22 +1,16 @@
 package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.Size;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import ru.bwsite.android.amopizza.DataObjects.SizePrice;

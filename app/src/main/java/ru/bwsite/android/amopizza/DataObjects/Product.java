@@ -1,19 +1,9 @@
 package ru.bwsite.android.amopizza.DataObjects;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
-import ru.bwsite.android.amopizza.DataObjects.SizePrice;
-import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaActivity;
-import ru.bwsite.android.amopizza.PizzaActivity.AdapterPizzaButtons;
-import ru.bwsite.android.amopizza.R;
 
 public class Product implements Parcelable {
     private int id;
@@ -23,17 +13,6 @@ public class Product implements Parcelable {
     private String label_text;
     private String label_color;
     private List<SizePrice> size_price = new ArrayList<>();
-
-/*    public Product(int id, String name, String img_url, String desc, String label_text, String label_color, List<SizePrice> size_price) {
-        this.id = id;
-        this.name = name;
-        this.img_url = img_url;
-        this.desc = desc;
-        this.label_text = label_text;
-        this.label_color = label_color;
-        this.size_price = size_price;
-    }*/
-
 
     @Override
     public int describeContents() {
