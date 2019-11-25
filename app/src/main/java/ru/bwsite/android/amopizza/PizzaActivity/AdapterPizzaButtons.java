@@ -24,7 +24,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private List<SizePrice> size_price;
     private Context context;
     private AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder;
-    private int selectedItem = 0;
+    private int selectedItemSizeButton = 0;
 
     public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView, AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
         this.size_price = size_price;
@@ -48,7 +48,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
-        if (position == selectedItem) {
+        if (position == selectedItemSizeButton) {
             holder.button.setBackgroundResource(R.drawable.size_button_pressed);
             holder.button.setTypeface(null, Typeface.BOLD);
         } else {
@@ -96,7 +96,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     }
 
     private void changeColor(int i) {
-        selectedItem = i;
+        selectedItemSizeButton = i;
         notifyDataSetChanged();
     }
 

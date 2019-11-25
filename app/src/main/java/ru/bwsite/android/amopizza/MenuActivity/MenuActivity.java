@@ -22,7 +22,6 @@ import ru.bwsite.android.amopizza.Services.GroupApi;
 
 public class MenuActivity extends AppCompatActivity implements Callback<List<GroupProduct>> {
     private static final String TAG = "MenuActivity";
-    private Button mPizzaButton;
     private RecyclerView recyclerView;
     private AdapterMenuActivity mAdapterMenuActivity;
     private List<GroupProduct> groupList = new ArrayList<>();

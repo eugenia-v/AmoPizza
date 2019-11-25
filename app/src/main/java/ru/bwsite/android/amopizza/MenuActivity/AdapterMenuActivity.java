@@ -20,6 +20,7 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
 
     private List<GroupProduct> groupList;
     private MenuActivity context;
+    private int selectedItemMenuButton = -1;
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public AdapterMenuActivity(List<GroupProduct> groups, MenuActivity context) {
@@ -34,7 +35,7 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_menu_button, parent, false);
 
-        return new AdapterMenuActivity.MyViewHolder(view);
+        return new AdapterMenuActivity.MyViewHolder(view, this);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -43,17 +44,20 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
+        if (position == selectedItemMenuButton) {
+            PizzaActivity.titlePizzaActivity = groupList.get(position).gr_name;
+        }
+
         holder.button.setText(groupList.get(position).gr_name);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new PizzaActivity().setTitlePizzaActivity(groupList.get(position).gr_name);
-                List <Product> productsList = groupList.get(position).products;
+                List<Product> productsList = groupList.get(position).products;
                 Intent intent = PizzaActivity.newIntent(context, (ArrayList) productsList);
                 context.startActivity(intent);
+                holder.mAdapterMenuActivity.changeTitlePizzaActivity(position);
             }
         });
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -64,11 +68,18 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private Button button;
+        private AdapterMenuActivity mAdapterMenuActivity;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView, AdapterMenuActivity mAdapterMenuActivity) {
             super(itemView);
             button = itemView.findViewById(R.id.pizzaButton);
+            this.mAdapterMenuActivity = mAdapterMenuActivity;
         }
+    }
+
+    private void changeTitlePizzaActivity(int i) {
+        selectedItemMenuButton = i;
+        notifyDataSetChanged();
     }
 }
 
