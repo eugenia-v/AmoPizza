@@ -17,8 +17,6 @@ import ru.bwsite.android.amopizza.R;
 public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActivity.MyViewHolder> {
     private List<Product> productList;
     private PizzaActivity context;
-    private RecyclerView recyclerView2;
-    private AdapterPizzaButtons mAdapterPizzaButtons;
     private LinearLayoutManager linearLayoutManager;
 
     // Provide a suitable constructor (depends on the kind of dataset)
