@@ -48,11 +48,10 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
 
-        int width = screenSizePx() - dpToPx(86);//86 - отступ кнопок от края экрана
+        int width = screenSizePx() - dpToPx(96);//96 - отступ кнопок от края экрана
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
         if (position == selectedItem) {
             holder.button.setBackgroundResource(R.drawable.shadow_blue_button);
-            holder.button.setTextColor(0x0D47A1);
         } else
             holder.button.setBackgroundResource(R.drawable.shadow_gray_button);
     }
