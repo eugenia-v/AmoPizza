@@ -37,7 +37,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         // create a new view
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.pizza_buttons, parent, false);
+                .inflate(R.layout.size_buttons, parent, false);
 
         return new AdapterPizzaButtons.MyViewHolder(view, this);
     }
@@ -50,10 +50,6 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
 
         int width = screenSizePx() - dpToPx(96);//96 - отступ кнопок от края экрана
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
-        if (position == selectedItem) {
-            holder.button.setBackgroundResource(R.drawable.shadow_blue_button);
-        } else
-            holder.button.setBackgroundResource(R.drawable.shadow_gray_button);
     }
 
 
