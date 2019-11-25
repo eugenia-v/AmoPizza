@@ -42,12 +42,12 @@ public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivit
     public void onBindViewHolder(final AdapterMenuActivity.MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
         holder.button.setText(groupList.get(position).gr_name);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //holder.button_menu.setBackgroundResource(R.drawable.bgalt);
-                //Intent intent = new Intent(context, PizzaActivity.class);
+                new PizzaActivity().setTitlePizzaActivity(groupList.get(position).gr_name);
                 List <Product> productsList = groupList.get(position).products;
                 Intent intent = PizzaActivity.newIntent(context, (ArrayList) productsList);
                 context.startActivity(intent);

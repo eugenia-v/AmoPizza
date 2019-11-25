@@ -26,10 +26,12 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
     private RecyclerView recyclerView;
     private AdapterMenuActivity mAdapterMenuActivity;
     private List<GroupProduct> groupList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("MenuActivity", "onCreate(Bundle) called");
+
         setContentView(R.layout.activity_menu);
         try {
             GroupApi groupApi = ApiCreator.getGroups();
@@ -45,7 +47,7 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
 
     }
 
-     @Override
+    @Override
     public void onResponse(Call<List<GroupProduct>> call, Response<List<GroupProduct>> response) {
         if (response.isSuccessful()) {
             List<GroupProduct> changesList = response.body();
@@ -69,4 +71,5 @@ public class MenuActivity extends AppCompatActivity implements Callback<List<Gro
         mAdapterMenuActivity = new AdapterMenuActivity(groupList, this);
         recyclerView.setAdapter(mAdapterMenuActivity);
     }
+
 }

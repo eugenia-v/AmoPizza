@@ -17,6 +17,12 @@ public class PizzaActivity extends AppCompatActivity  {
     private RecyclerView.LayoutManager layoutManager;
     private List<Product> productsList;
 
+
+    private String titlePizzaActivity ="Amo pizza";
+    public void setTitlePizzaActivity(String titlePizzaActivity) {
+        this.titlePizzaActivity = titlePizzaActivity;
+    }
+
     private static final String EXTRA_PRODUCT = "ru.bwsite.android.amopizza.product";
     public static Intent newIntent(Context packageContext, ArrayList<Product> productsList) {
         Intent intent = new Intent(packageContext, PizzaActivity.class);
@@ -27,6 +33,7 @@ public class PizzaActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(titlePizzaActivity);
         setContentView(R.layout.activity_pizza);//установка ресурса разметки дизайна
         productsList = getIntent().getParcelableArrayListExtra(EXTRA_PRODUCT);
         initRecyclerView();
