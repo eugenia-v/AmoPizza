@@ -2,6 +2,7 @@ package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -47,7 +48,13 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
-
+        if (position == selectedItem) {
+            holder.button.setBackgroundResource(R.drawable.size_button_pressed);
+            holder.button.setTypeface(null, Typeface.BOLD);
+        } else {
+            holder.button.setBackgroundResource(R.drawable.size_button_norm);
+            holder.button.setTypeface(null, Typeface.NORMAL);
+        }
         int width = screenSizePx() - dpToPx(96);//96 - отступ кнопок от края экрана
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
     }
