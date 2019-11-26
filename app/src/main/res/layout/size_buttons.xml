@@ -10,9 +10,9 @@
         android:id="@+id/button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/bgnorm"
+        android:background="@drawable/size_button_pressed"
         android:gravity="center_horizontal|center_vertical"
-        android:textColor="#FFAB91"
-        android:textSize="16sp" />
+        android:textColor="#1565C0"
+        android:textSize="14sp" />
 
 </LinearLayout>

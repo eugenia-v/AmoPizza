@@ -2,6 +2,7 @@ package ru.bwsite.android.amopizza.PizzaActivity;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -11,8 +12,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
+
 import ru.bwsite.android.amopizza.DataObjects.SizePrice;
 import ru.bwsite.android.amopizza.R;
 
@@ -20,7 +24,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     private List<SizePrice> size_price;
     private Context context;
     private AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder;
-    private int selectedItem = 0;
+    private int selectedItemSizeButton = 0;
 
     public AdapterPizzaButtons(List<SizePrice> size_price, Context context, RecyclerView recyclerView, AdapterPizzaActivity.MyViewHolder mAdapterPizzaActivityMyViewHolder) {
         this.size_price = size_price;
@@ -34,7 +38,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         // create a new view
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.pizza_buttons, parent, false);
+                .inflate(R.layout.size_buttons, parent, false);
 
         return new AdapterPizzaButtons.MyViewHolder(view, this);
     }
@@ -44,13 +48,15 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     @Override
     public void onBindViewHolder(final AdapterPizzaButtons.MyViewHolder holder, final int position) {
         Log.d("position", String.valueOf(position));
-
-        int width = screenSizePx() - dpToPx(64);//64 - отступ кнопок от края экрана
+        if (position == selectedItemSizeButton) {
+            holder.button.setBackgroundResource(R.drawable.size_button_pressed);
+            holder.button.setTypeface(null, Typeface.BOLD);
+        } else {
+            holder.button.setBackgroundResource(R.drawable.size_button_norm);
+            holder.button.setTypeface(null, Typeface.NORMAL);
+        }
+        int width = screenSizePx() - dpToPx(96);//96 - отступ кнопок от края экрана
         holder.bindSize(size_price.get(position), width, size_price.size(), position, mAdapterPizzaActivityMyViewHolder);
-        if (position == selectedItem)
-            holder.button.setBackgroundResource(R.drawable.bgalt);
-        else
-            holder.button.setBackgroundResource(R.drawable.bgnorm);
     }
 
 
@@ -90,7 +96,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
     }
 
     private void changeColor(int i) {
-        selectedItem = i;
+        selectedItemSizeButton = i;
         notifyDataSetChanged();
     }
 
@@ -99,7 +105,7 @@ public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButton
         return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
-    public int screenSizePx(){
+    public int screenSizePx() {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point point = new Point();
