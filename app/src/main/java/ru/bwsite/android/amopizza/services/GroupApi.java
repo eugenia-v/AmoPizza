@@ -1,10 +1,10 @@
-package ru.bwsite.android.amopizza.Services;
+package ru.bwsite.android.amopizza.services;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import ru.bwsite.android.amopizza.DataObjects.GroupProduct;
+import ru.bwsite.android.amopizza.model.GroupProduct;
 
 
 /**

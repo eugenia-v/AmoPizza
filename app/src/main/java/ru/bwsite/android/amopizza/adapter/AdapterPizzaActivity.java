@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.PizzaActivity;
+package ru.bwsite.android.amopizza.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.List;
-import ru.bwsite.android.amopizza.DataObjects.Product;
+
+import ru.bwsite.android.amopizza.activity.PizzaActivity;
+import ru.bwsite.android.amopizza.model.Product;
 import ru.bwsite.android.amopizza.R;
 
 public class AdapterPizzaActivity extends RecyclerView.Adapter<AdapterPizzaActivity.MyViewHolder> {

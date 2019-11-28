@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.DataObjects;
+package ru.bwsite.android.amopizza.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

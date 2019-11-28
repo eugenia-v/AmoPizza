@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.DataObjects;
+package ru.bwsite.android.amopizza.model;
 
 import java.util.List;
 

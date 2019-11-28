@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.Services;
+package ru.bwsite.android.amopizza.services;
 
 import android.util.Log;
 

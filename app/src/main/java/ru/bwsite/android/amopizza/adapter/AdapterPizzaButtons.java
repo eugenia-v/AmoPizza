@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.PizzaActivity;
+package ru.bwsite.android.amopizza.adapter;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import ru.bwsite.android.amopizza.DataObjects.SizePrice;
+import ru.bwsite.android.amopizza.model.SizePrice;
 import ru.bwsite.android.amopizza.R;
 
 public class AdapterPizzaButtons extends RecyclerView.Adapter<AdapterPizzaButtons.MyViewHolder> {

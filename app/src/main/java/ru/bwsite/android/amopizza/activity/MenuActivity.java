@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.MenuActivity;
+package ru.bwsite.android.amopizza.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +14,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import ru.bwsite.android.amopizza.DataObjects.GroupProduct;
+import ru.bwsite.android.amopizza.adapter.AdapterMenuActivity;
+import ru.bwsite.android.amopizza.model.GroupProduct;
 import ru.bwsite.android.amopizza.R;
-import ru.bwsite.android.amopizza.Services.ApiCreator;
-import ru.bwsite.android.amopizza.Services.GroupApi;
+import ru.bwsite.android.amopizza.services.ApiCreator;
+import ru.bwsite.android.amopizza.services.GroupApi;
 
 public class MenuActivity extends AppCompatActivity implements Callback<List<GroupProduct>> {
     private static final String TAG = "MenuActivity";
