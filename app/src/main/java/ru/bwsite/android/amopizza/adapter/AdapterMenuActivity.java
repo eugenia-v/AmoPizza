@@ -1,4 +1,4 @@
-package ru.bwsite.android.amopizza.MenuActivity;
+package ru.bwsite.android.amopizza.adapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.bwsite.android.amopizza.DataObjects.GroupProduct;
-import ru.bwsite.android.amopizza.PizzaActivity.PizzaActivity;
+import ru.bwsite.android.amopizza.activity.MenuActivity;
+import ru.bwsite.android.amopizza.activity.PizzaActivity;
+import ru.bwsite.android.amopizza.model.GroupProduct;
 import ru.bwsite.android.amopizza.R;
-import ru.bwsite.android.amopizza.DataObjects.Product;
+import ru.bwsite.android.amopizza.model.Product;
 
 public class AdapterMenuActivity extends RecyclerView.Adapter<AdapterMenuActivity.MyViewHolder> {
 
